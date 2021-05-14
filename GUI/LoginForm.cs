@@ -26,5 +26,10 @@ namespace Corvus_Proyecto
         {
 
         }
+
+        private void cmdTutorial_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
