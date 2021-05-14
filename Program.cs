@@ -17,7 +17,7 @@ namespace Corvus_Proyecto
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new LoginForm());
         }
     }
 }

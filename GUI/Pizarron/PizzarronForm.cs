@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Corvus_Proyecto
+namespace Corvus_Proyecto.GUI.Pizarron
 {
-    public partial class Form1 : Form
+    public partial class PizzarronForm : Form
     {
-        public Form1()
+        public PizzarronForm()
         {
             InitializeComponent();
         }
-
     }
 }
