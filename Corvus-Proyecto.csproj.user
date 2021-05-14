@@ -7,5 +7,11 @@
     <Compile Update="GUI\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\Pizarron\ColorSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="GUI\Pizarron\PizzarronForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
