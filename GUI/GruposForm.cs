@@ -16,5 +16,20 @@ namespace Corvus_Proyecto.GUI
         {
             InitializeComponent();
         }
+
+        private void cmdBack_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GruposForma_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
