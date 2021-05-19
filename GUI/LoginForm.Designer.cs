@@ -68,6 +68,7 @@ namespace Corvus_Proyecto
             this.cmdEnter.TabIndex = 2;
             this.cmdEnter.Text = "Entrar";
             this.cmdEnter.UseVisualStyleBackColor = true;
+            this.cmdEnter.Click += new System.EventHandler(this.cmdEnter_Click);
             // 
             // txtUser
             // 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Corvus_Proyecto.GUI;
 
 namespace Corvus_Proyecto
 {
@@ -29,6 +30,14 @@ namespace Corvus_Proyecto
 
         private void cmdTutorial_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void cmdEnter_Click(object sender, EventArgs e)
+        {
+            MenuForm menu = new MenuForm();
+            this.Hide();
+            menu.Show();
 
         }
     }

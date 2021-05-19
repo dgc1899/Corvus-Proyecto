@@ -29,7 +29,9 @@ namespace Corvus_Proyecto.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            GrupoNuevoForm grupoNuevoForm = new GrupoNuevoForm();
+            this.Hide();
+            grupoNuevoForm.Show();
         }
     }
 }

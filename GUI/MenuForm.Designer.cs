@@ -60,6 +60,7 @@ namespace Corvus_Proyecto.GUI
             // cmdPizarron
             // 
             this.cmdPizarron.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdPizarron.ForeColor = System.Drawing.Color.Transparent;
             this.cmdPizarron.Image = ((System.Drawing.Image)(resources.GetObject("cmdPizarron.Image")));
             this.cmdPizarron.Location = new System.Drawing.Point(12, 196);
             this.cmdPizarron.Name = "cmdPizarron";
@@ -70,12 +71,14 @@ namespace Corvus_Proyecto.GUI
             // cmdGrupos
             // 
             this.cmdGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdGrupos.ForeColor = System.Drawing.Color.Transparent;
             this.cmdGrupos.Image = ((System.Drawing.Image)(resources.GetObject("cmdGrupos.Image")));
             this.cmdGrupos.Location = new System.Drawing.Point(308, 196);
             this.cmdGrupos.Name = "cmdGrupos";
             this.cmdGrupos.Size = new System.Drawing.Size(215, 101);
             this.cmdGrupos.TabIndex = 9;
             this.cmdGrupos.UseVisualStyleBackColor = true;
+            this.cmdGrupos.Click += new System.EventHandler(this.cmdGrupos_Click);
             // 
             // cmdBack
             // 
@@ -99,6 +102,7 @@ namespace Corvus_Proyecto.GUI
             this.Controls.Add(this.pictureBox1);
             this.Name = "MenuForm";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.MenuForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

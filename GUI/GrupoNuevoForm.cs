@@ -21,5 +21,11 @@ namespace Corvus_Proyecto.GUI
         {
 
         }
+
+        private void cmdAgregar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
     }
 }

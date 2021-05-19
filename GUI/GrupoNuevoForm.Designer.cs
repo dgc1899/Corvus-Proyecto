@@ -63,7 +63,7 @@ namespace Corvus_Proyecto.GUI
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(13, 163);
+            this.lblDesc.Location = new System.Drawing.Point(13, 183);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(126, 15);
             this.lblDesc.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace Corvus_Proyecto.GUI
             // lblPeriodo
             // 
             this.lblPeriodo.AutoSize = true;
-            this.lblPeriodo.Location = new System.Drawing.Point(88, 96);
+            this.lblPeriodo.Location = new System.Drawing.Point(88, 101);
             this.lblPeriodo.Name = "lblPeriodo";
             this.lblPeriodo.Size = new System.Drawing.Size(51, 15);
             this.lblPeriodo.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace Corvus_Proyecto.GUI
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(145, 146);
+            this.txtDesc.Location = new System.Drawing.Point(145, 163);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(205, 111);
@@ -108,6 +108,7 @@ namespace Corvus_Proyecto.GUI
             this.cmdAgregar.TabIndex = 7;
             this.cmdAgregar.Text = "Agregar";
             this.cmdAgregar.UseVisualStyleBackColor = true;
+            this.cmdAgregar.Click += new System.EventHandler(this.cmdAgregar_Click);
             // 
             // GrupoNuevoForm
             // 
