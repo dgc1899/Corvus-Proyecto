@@ -16,6 +16,15 @@
     <Compile Update="GUI\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\MiembrosGrupoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\NuevaEvaluaciónForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\OpcionesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\Pizarron\ColorSelector.cs">
       <SubType>Component</SubType>
     </Compile>
