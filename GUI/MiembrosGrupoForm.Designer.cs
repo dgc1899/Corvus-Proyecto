@@ -29,20 +29,20 @@ namespace Corvus_Proyecto.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listMiembros = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // listBox1
+            // listMiembros
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(12, 25);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(118, 214);
-            this.listBox1.TabIndex = 0;
+            this.listMiembros.FormattingEnabled = true;
+            this.listMiembros.ItemHeight = 15;
+            this.listMiembros.Location = new System.Drawing.Point(12, 25);
+            this.listMiembros.Name = "listMiembros";
+            this.listMiembros.Size = new System.Drawing.Size(118, 214);
+            this.listMiembros.TabIndex = 0;
             // 
             // button1
             // 
@@ -77,7 +77,7 @@ namespace Corvus_Proyecto.GUI
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listMiembros);
             this.Name = "Miembros_de_Grupo";
             this.Text = "MiembrosGrupo";
             this.ResumeLayout(false);
@@ -87,7 +87,7 @@ namespace Corvus_Proyecto.GUI
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listMiembros;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
