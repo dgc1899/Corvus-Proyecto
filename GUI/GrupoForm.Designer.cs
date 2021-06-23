@@ -89,6 +89,7 @@ namespace Corvus_Proyecto.GUI
             // cmdAtras
             // 
             this.cmdAtras.AutoSize = true;
+            this.cmdAtras.FlatAppearance.BorderSize = 0;
             this.cmdAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdAtras.ForeColor = System.Drawing.Color.Transparent;
             this.cmdAtras.Image = ((System.Drawing.Image)(resources.GetObject("cmdAtras.Image")));

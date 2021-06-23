@@ -40,6 +40,7 @@ namespace Corvus_Proyecto.GUI
             // 
             // cmdBack
             // 
+            this.cmdBack.FlatAppearance.BorderSize = 0;
             this.cmdBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdBack.ForeColor = System.Drawing.Color.White;
             this.cmdBack.Image = ((System.Drawing.Image)(resources.GetObject("cmdBack.Image")));
@@ -52,6 +53,7 @@ namespace Corvus_Proyecto.GUI
             // 
             // cmdNuevoGrupo
             // 
+            this.cmdNuevoGrupo.FlatAppearance.BorderSize = 0;
             this.cmdNuevoGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdNuevoGrupo.ForeColor = System.Drawing.Color.White;
             this.cmdNuevoGrupo.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevoGrupo.Image")));
@@ -64,6 +66,7 @@ namespace Corvus_Proyecto.GUI
             // 
             // cmdGrupo_1
             // 
+            this.cmdGrupo_1.FlatAppearance.BorderSize = 0;
             this.cmdGrupo_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdGrupo_1.ForeColor = System.Drawing.Color.White;
             this.cmdGrupo_1.Image = ((System.Drawing.Image)(resources.GetObject("cmdGrupo_1.Image")));
@@ -84,6 +87,7 @@ namespace Corvus_Proyecto.GUI
             // 
             // cmdGrupo_2
             // 
+            this.cmdGrupo_2.FlatAppearance.BorderSize = 0;
             this.cmdGrupo_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdGrupo_2.ForeColor = System.Drawing.Color.White;
             this.cmdGrupo_2.Image = ((System.Drawing.Image)(resources.GetObject("cmdGrupo_2.Image")));

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Corvus_Proyecto.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Corvus_Proyecto.GUI
 {
     public partial class GrupoNuevoForm : Form
     {
+        GrupoModel grupo = new GrupoModel();
         public GrupoNuevoForm()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace Corvus_Proyecto.GUI
 
         private void cmdAgregar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+  
 
         }
     }

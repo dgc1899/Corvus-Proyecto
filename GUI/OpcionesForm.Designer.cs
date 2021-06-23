@@ -95,6 +95,8 @@ namespace Corvus_Proyecto.GUI
             this.btn_Eliminar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Eliminar.BackgroundImage")));
             this.btn_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Eliminar.FlatAppearance.BorderSize = 0;
+            this.btn_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Eliminar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_Eliminar.Location = new System.Drawing.Point(170, 238);
             this.btn_Eliminar.Name = "btn_Eliminar";

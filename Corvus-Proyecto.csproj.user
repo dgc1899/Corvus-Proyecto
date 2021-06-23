@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShowAllFiles>false</ShowAllFiles>
+  </PropertyGroup>
   <ItemGroup>
+    <Compile Update="GUI\ActividadesGestionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\EvaluacionesGestionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\GrupoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -19,6 +28,9 @@
     <Compile Update="GUI\MiembrosGrupoForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\NuevaActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\NuevaEvaluaciónForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -29,6 +41,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="GUI\Pizarron\PizzarronForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\RegistrarForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

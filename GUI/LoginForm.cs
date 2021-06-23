@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Corvus_Proyecto.GUI;
+using Corvus_Proyecto.Model;
+using Corvus_Proyecto.Dto;
+using Corvus_Proyecto.Controllers;
 
 namespace Corvus_Proyecto
 {
     public partial class LoginForm : Form
     {
+        DocenteController docenteController=new DocenteController();
+
+        LoginDto loginDto = new LoginDto();
         public LoginForm()
         {
             InitializeComponent();
@@ -35,10 +41,43 @@ namespace Corvus_Proyecto
 
         private void cmdEnter_Click(object sender, EventArgs e)
         {
-            MenuForm menu = new MenuForm();
-            this.Hide();
-            menu.Show();
+            try
+            {
+                if (txtUser.Text == "" || txtPass.Text == "")
+                {
+                    MessageBox.Show("Llenar Campos");
+                }
+                else
+                {
+                    loginDto.user = txtUser.Text.Trim();
+                    loginDto.pass = txtPass.Text.Trim();
+                    bool verify= docenteController.Login(loginDto);
 
+                    if (verify == true)
+                    {
+                        MenuForm menu = new MenuForm();
+                        this.Hide();
+                        menu.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Intentar de nuevo");
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+
+        }
+
+        private void lblRegistrar_Click(object sender, EventArgs e)
+        {
+            RegistrarForm registrarForm = new RegistrarForm();
+            this.Hide();
+            registrarForm.Show();
         }
     }
 }

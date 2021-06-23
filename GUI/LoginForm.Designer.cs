@@ -37,6 +37,8 @@ namespace Corvus_Proyecto
             this.txtPass = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdTutorial = new System.Windows.Forms.Button();
+            this.lblRegistrar = new System.Windows.Forms.Label();
+            this.cmdRegistrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,9 +64,9 @@ namespace Corvus_Proyecto
             // 
             // cmdEnter
             // 
-            this.cmdEnter.Location = new System.Drawing.Point(152, 269);
+            this.cmdEnter.Location = new System.Drawing.Point(136, 269);
             this.cmdEnter.Name = "cmdEnter";
-            this.cmdEnter.Size = new System.Drawing.Size(75, 23);
+            this.cmdEnter.Size = new System.Drawing.Size(87, 23);
             this.cmdEnter.TabIndex = 2;
             this.cmdEnter.Text = "Entrar";
             this.cmdEnter.UseVisualStyleBackColor = true;
@@ -97,6 +99,7 @@ namespace Corvus_Proyecto
             // 
             this.cmdTutorial.AutoSize = true;
             this.cmdTutorial.BackColor = System.Drawing.Color.Transparent;
+            this.cmdTutorial.FlatAppearance.BorderSize = 0;
             this.cmdTutorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdTutorial.ForeColor = System.Drawing.Color.Transparent;
             this.cmdTutorial.Image = ((System.Drawing.Image)(resources.GetObject("cmdTutorial.Image")));
@@ -107,11 +110,35 @@ namespace Corvus_Proyecto
             this.cmdTutorial.UseVisualStyleBackColor = false;
             this.cmdTutorial.Click += new System.EventHandler(this.cmdTutorial_Click);
             // 
+            // lblRegistrar
+            // 
+            this.lblRegistrar.AutoSize = true;
+            this.lblRegistrar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblRegistrar.Location = new System.Drawing.Point(267, 277);
+            this.lblRegistrar.Name = "lblRegistrar";
+            this.lblRegistrar.Size = new System.Drawing.Size(59, 15);
+            this.lblRegistrar.TabIndex = 7;
+            this.lblRegistrar.Text = "Registrate";
+            this.lblRegistrar.Click += new System.EventHandler(this.lblRegistrar_Click);
+            // 
+            // cmdRegistrar
+            // 
+            this.cmdRegistrar.FlatAppearance.BorderSize = 0;
+            this.cmdRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdRegistrar.Location = new System.Drawing.Point(151, 317);
+            this.cmdRegistrar.Name = "cmdRegistrar";
+            this.cmdRegistrar.Size = new System.Drawing.Size(63, 19);
+            this.cmdRegistrar.TabIndex = 8;
+            this.cmdRegistrar.Text = "button1";
+            this.cmdRegistrar.UseVisualStyleBackColor = true;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 309);
+            this.ClientSize = new System.Drawing.Size(364, 348);
+            this.Controls.Add(this.cmdRegistrar);
+            this.Controls.Add(this.lblRegistrar);
             this.Controls.Add(this.cmdTutorial);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtPass);
@@ -119,6 +146,7 @@ namespace Corvus_Proyecto
             this.Controls.Add(this.cmdEnter);
             this.Controls.Add(this.lblPass);
             this.Controls.Add(this.lblUser);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LoginForm";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -136,6 +164,8 @@ namespace Corvus_Proyecto
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmdTutorial;
+        private System.Windows.Forms.Label lblRegistrar;
+        private System.Windows.Forms.Button cmdRegistrar;
     }
 }
 
