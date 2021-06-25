@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Corvus_Proyecto.Model
 {
-    class Nota
+    public class NotaModel
     {
+        public int IdNota { get; set; }
+        public string Contenido { get; set; }
     }
 }

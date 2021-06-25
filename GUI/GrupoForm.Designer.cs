@@ -42,7 +42,7 @@ namespace Corvus_Proyecto.GUI
             // 
             this.listActividades.FormattingEnabled = true;
             this.listActividades.ItemHeight = 15;
-            this.listActividades.Location = new System.Drawing.Point(0, 0);
+            this.listActividades.Location = new System.Drawing.Point(12, 12);
             this.listActividades.Name = "listActividades";
             this.listActividades.Size = new System.Drawing.Size(141, 334);
             this.listActividades.TabIndex = 0;
@@ -89,6 +89,7 @@ namespace Corvus_Proyecto.GUI
             // cmdAtras
             // 
             this.cmdAtras.AutoSize = true;
+            this.cmdAtras.FlatAppearance.BorderSize = 0;
             this.cmdAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdAtras.ForeColor = System.Drawing.Color.Transparent;
             this.cmdAtras.Image = ((System.Drawing.Image)(resources.GetObject("cmdAtras.Image")));
@@ -97,6 +98,7 @@ namespace Corvus_Proyecto.GUI
             this.cmdAtras.Size = new System.Drawing.Size(78, 67);
             this.cmdAtras.TabIndex = 5;
             this.cmdAtras.UseVisualStyleBackColor = true;
+            this.cmdAtras.Click += new System.EventHandler(this.cmdAtras_Click);
             // 
             // GrupoForm
             // 

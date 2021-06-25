@@ -38,7 +38,7 @@ namespace Corvus_Proyecto.GUI
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cmdAgregarArchivo = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -48,7 +48,7 @@ namespace Corvus_Proyecto.GUI
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.Size = new System.Drawing.Size(41, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Título:";
             // 
@@ -112,15 +112,17 @@ namespace Corvus_Proyecto.GUI
             this.checkBox2.Text = "Agendar";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // cmdAgregarArchivo
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(117, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 53);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmdAgregarArchivo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdAgregarArchivo.BackgroundImage")));
+            this.cmdAgregarArchivo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdAgregarArchivo.FlatAppearance.BorderSize = 0;
+            this.cmdAgregarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdAgregarArchivo.Location = new System.Drawing.Point(117, 176);
+            this.cmdAgregarArchivo.Name = "cmdAgregarArchivo";
+            this.cmdAgregarArchivo.Size = new System.Drawing.Size(60, 53);
+            this.cmdAgregarArchivo.TabIndex = 8;
+            this.cmdAgregarArchivo.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -147,7 +149,7 @@ namespace Corvus_Proyecto.GUI
             this.ClientSize = new System.Drawing.Size(432, 300);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmdAgregarArchivo);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBox3);
@@ -173,7 +175,7 @@ namespace Corvus_Proyecto.GUI
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cmdAgregarArchivo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
     }

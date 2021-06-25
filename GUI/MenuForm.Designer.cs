@@ -59,6 +59,7 @@ namespace Corvus_Proyecto.GUI
             // 
             // cmdPizarron
             // 
+            this.cmdPizarron.FlatAppearance.BorderSize = 0;
             this.cmdPizarron.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdPizarron.ForeColor = System.Drawing.Color.Transparent;
             this.cmdPizarron.Image = ((System.Drawing.Image)(resources.GetObject("cmdPizarron.Image")));
@@ -70,6 +71,7 @@ namespace Corvus_Proyecto.GUI
             // 
             // cmdGrupos
             // 
+            this.cmdGrupos.FlatAppearance.BorderSize = 0;
             this.cmdGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdGrupos.ForeColor = System.Drawing.Color.Transparent;
             this.cmdGrupos.Image = ((System.Drawing.Image)(resources.GetObject("cmdGrupos.Image")));
@@ -82,6 +84,7 @@ namespace Corvus_Proyecto.GUI
             // 
             // cmdBack
             // 
+            this.cmdBack.FlatAppearance.BorderSize = 0;
             this.cmdBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdBack.Image = ((System.Drawing.Image)(resources.GetObject("cmdBack.Image")));
             this.cmdBack.Location = new System.Drawing.Point(12, 326);
@@ -89,6 +92,7 @@ namespace Corvus_Proyecto.GUI
             this.cmdBack.Size = new System.Drawing.Size(66, 62);
             this.cmdBack.TabIndex = 10;
             this.cmdBack.UseVisualStyleBackColor = true;
+            this.cmdBack.Click += new System.EventHandler(this.cmdBack_Click);
             // 
             // MenuForm
             // 
