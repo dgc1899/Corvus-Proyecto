@@ -30,27 +30,26 @@ namespace Corvus_Proyecto
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.lblUser = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             this.lblPass = new System.Windows.Forms.Label();
             this.cmdEnter = new System.Windows.Forms.Button();
-            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdTutorial = new System.Windows.Forms.Button();
-            this.lblRegistrar = new System.Windows.Forms.Label();
             this.cmdRegistrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblUser
+            // lblId
             // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(95, 159);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(50, 15);
-            this.lblUser.TabIndex = 0;
-            this.lblUser.Text = "Usuario:";
-            this.lblUser.Click += new System.EventHandler(this.label1_Click);
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(81, 159);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(64, 15);
+            this.lblId.TabIndex = 0;
+            this.lblId.Text = "ID Control:";
+            this.lblId.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblPass
             // 
@@ -72,17 +71,19 @@ namespace Corvus_Proyecto
             this.cmdEnter.UseVisualStyleBackColor = true;
             this.cmdEnter.Click += new System.EventHandler(this.cmdEnter_Click);
             // 
-            // txtUser
+            // txtId
             // 
-            this.txtUser.Location = new System.Drawing.Point(151, 156);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(125, 23);
-            this.txtUser.TabIndex = 3;
+            this.txtId.Location = new System.Drawing.Point(151, 156);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(125, 23);
+            this.txtId.TabIndex = 3;
+            this.txtId.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(152, 199);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(125, 23);
             this.txtPass.TabIndex = 4;
             // 
@@ -110,27 +111,18 @@ namespace Corvus_Proyecto
             this.cmdTutorial.UseVisualStyleBackColor = false;
             this.cmdTutorial.Click += new System.EventHandler(this.cmdTutorial_Click);
             // 
-            // lblRegistrar
-            // 
-            this.lblRegistrar.AutoSize = true;
-            this.lblRegistrar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblRegistrar.Location = new System.Drawing.Point(267, 277);
-            this.lblRegistrar.Name = "lblRegistrar";
-            this.lblRegistrar.Size = new System.Drawing.Size(59, 15);
-            this.lblRegistrar.TabIndex = 7;
-            this.lblRegistrar.Text = "Registrate";
-            this.lblRegistrar.Click += new System.EventHandler(this.lblRegistrar_Click);
-            // 
             // cmdRegistrar
             // 
             this.cmdRegistrar.FlatAppearance.BorderSize = 0;
             this.cmdRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdRegistrar.Location = new System.Drawing.Point(151, 317);
+            this.cmdRegistrar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.cmdRegistrar.Location = new System.Drawing.Point(151, 324);
             this.cmdRegistrar.Name = "cmdRegistrar";
-            this.cmdRegistrar.Size = new System.Drawing.Size(63, 19);
+            this.cmdRegistrar.Size = new System.Drawing.Size(72, 22);
             this.cmdRegistrar.TabIndex = 8;
-            this.cmdRegistrar.Text = "button1";
+            this.cmdRegistrar.Text = "Registrate";
             this.cmdRegistrar.UseVisualStyleBackColor = true;
+            this.cmdRegistrar.Click += new System.EventHandler(this.cmdRegistrar_Click);
             // 
             // LoginForm
             // 
@@ -138,14 +130,13 @@ namespace Corvus_Proyecto
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 348);
             this.Controls.Add(this.cmdRegistrar);
-            this.Controls.Add(this.lblRegistrar);
             this.Controls.Add(this.cmdTutorial);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.cmdEnter);
             this.Controls.Add(this.lblPass);
-            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.lblId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LoginForm";
             this.Text = "Login";
@@ -157,14 +148,13 @@ namespace Corvus_Proyecto
 
         #endregion
 
-        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblPass;
         private System.Windows.Forms.Button cmdEnter;
-        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmdTutorial;
-        private System.Windows.Forms.Label lblRegistrar;
         private System.Windows.Forms.Button cmdRegistrar;
     }
 }

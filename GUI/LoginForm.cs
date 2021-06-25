@@ -16,8 +16,8 @@ namespace Corvus_Proyecto
 {
     public partial class LoginForm : Form
     {
+        int idDocente;
         DocenteController docenteController=new DocenteController();
-
         LoginDto loginDto = new LoginDto();
         public LoginForm()
         {
@@ -43,21 +43,24 @@ namespace Corvus_Proyecto
         {
             try
             {
-                if (txtUser.Text == "" || txtPass.Text == "")
+                if (txtId.Text == "" || txtPass.Text == "")
                 {
                     MessageBox.Show("Llenar Campos");
                 }
                 else
                 {
-                    loginDto.user = txtUser.Text.Trim();
+                    loginDto.IdDocente =Convert.ToInt32(txtId.Text.Trim());
                     loginDto.pass = txtPass.Text.Trim();
                     bool verify= docenteController.Login(loginDto);
 
                     if (verify == true)
                     {
+                        idDocente = Convert.ToInt32(txtId.Text.Trim());
+                        SqliteDataAccess.SetIdDocente(idDocente);
                         MenuForm menu = new MenuForm();
                         this.Hide();
                         menu.Show();
+
                     }
                     else
                     {
@@ -75,9 +78,19 @@ namespace Corvus_Proyecto
 
         private void lblRegistrar_Click(object sender, EventArgs e)
         {
+         
+        }
+
+        private void cmdRegistrar_Click(object sender, EventArgs e)
+        {
             RegistrarForm registrarForm = new RegistrarForm();
             this.Hide();
             registrarForm.Show();
+        }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

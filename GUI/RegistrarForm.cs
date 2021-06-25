@@ -27,7 +27,18 @@ namespace Corvus_Proyecto.GUI
             loginDto.user = textBox1.Text.Trim();
             loginDto.pass = textBox2.Text.Trim();
 
-            docenteController.Registar(loginDto);
+            bool registro = docenteController.Registar(loginDto);
+            if(registro == true)
+            {
+                MessageBox.Show("Registro completado");
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Intentar de nuevo");
+            }
         }
     }
 }

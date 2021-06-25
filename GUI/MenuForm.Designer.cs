@@ -92,6 +92,7 @@ namespace Corvus_Proyecto.GUI
             this.cmdBack.Size = new System.Drawing.Size(66, 62);
             this.cmdBack.TabIndex = 10;
             this.cmdBack.UseVisualStyleBackColor = true;
+            this.cmdBack.Click += new System.EventHandler(this.cmdBack_Click);
             // 
             // MenuForm
             // 

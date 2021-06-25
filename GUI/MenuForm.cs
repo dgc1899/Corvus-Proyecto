@@ -33,5 +33,12 @@ namespace Corvus_Proyecto.GUI
             this.Hide();
             gruposForma.Show();
         }
+
+        private void cmdBack_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForma = new LoginForm();
+            this.Hide();
+            loginForma.Show();
+        }
     }
 }

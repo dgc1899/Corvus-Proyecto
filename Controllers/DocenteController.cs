@@ -12,10 +12,6 @@ namespace Corvus_Proyecto.Controllers
 {
     public class DocenteController:BaseController
     {
-      /*  public DocenteController(string connString)
-        {
-            _connString = connString;
-        }*/
 
         //Login
         public bool Login(LoginDto dto)
@@ -24,13 +20,12 @@ namespace Corvus_Proyecto.Controllers
             {
                 using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
                 {
-                    using (SQLiteCommand command = new SQLiteCommand("select * from Docentes where nombreDocente=@nombreDocente AND passDocente=@passDocente ", connection))
+                    connection.Open();
+                    using (SQLiteCommand command = new SQLiteCommand("select * from Docentes where idDocente=@idDocente AND passDocente=@passDocente", connection))
                     {
-                        command.Parameters.AddWithValue("@nombreDocente", dto.user);
+                        command.Parameters.AddWithValue("@idDocente", dto.IdDocente);
                         command.Parameters.AddWithValue("@passDocente", dto.pass);
-
-                        connection.Open();
-                        using(SQLiteDataAdapter adapter=new SQLiteDataAdapter(command))
+                        using (SQLiteDataAdapter adapter=new SQLiteDataAdapter(command))
                         {
                             DataTable dt = new DataTable();
                             adapter.Fill(dt);
@@ -38,9 +33,11 @@ namespace Corvus_Proyecto.Controllers
                             command.ExecuteNonQuery();
 
                             if (dt.Rows.Count > 0)
-                            {
+                            {  
                                 return true;
                             }
+                            connection.Close();
+
                         }
 
                     }
@@ -52,22 +49,33 @@ namespace Corvus_Proyecto.Controllers
             }
             return false;
         }
-
-        public void Registar(LoginDto dto)
+     
+     
+        public bool Registar(LoginDto dto)
         {
             try
             {
                 using(SQLiteConnection connection =new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
                 {
-                    using(SQLiteCommand command=new SQLiteCommand("insert into Docentes values nombreDocente, passDocente values (@nombreDocente,@passDocente)",
+                    using (SQLiteCommand command=new SQLiteCommand(@"INSERT INTO Docentes ('nombreDocente','passDocente') VALUES (@nombreDocente,@passDocente)",
                         connection))
                     {
+                        // command.Parameters.Add(new SQLiteParameter("@nombreDocente", dto.user));
+                        //command.Parameters.Add(new SQLiteParameter("@passDocente", dto.pass));
                         connection.Open();
                         command.Parameters.AddWithValue("@nombreDocente", dto.user);
                         command.Parameters.AddWithValue("@passDocente", dto.pass);
 
-                        command.ExecuteNonQuery();
-                      
+                       var output= command.ExecuteNonQuery();
+                        if (output == 1)
+                        {
+                            connection.Close();
+
+                            return true;
+                        }
+                        else
+                            return false;
+                    
                     }
                 }
             }
@@ -75,6 +83,12 @@ namespace Corvus_Proyecto.Controllers
             {
                 throw new Exception(ex.Message, ex);
             }
+
+            
         }
+
+       
+
+
     }
 }

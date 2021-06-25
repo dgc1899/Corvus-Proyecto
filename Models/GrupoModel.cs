@@ -8,13 +8,14 @@ namespace Corvus_Proyecto.Model
 {
     public class GrupoModel
     {
-        public int IdGrupo { get; set; }
+        //public int IdGrupo { get; set; }
         public string Nombre { get; set; }
+        public string Periodo { get; set; }
         public string Descripcion { get; set; }
         public int IdDocente { get; set; }
 
-        public List<AlumnoModel> alumnoModels = new List<AlumnoModel>();
+        //public List<AlumnoModel> alumnoModels = new List<AlumnoModel>();
 
-        public List<ActividadModel> actividadModels = new List<ActividadModel>();
+        //public List<ActividadModel> actividadModels = new List<ActividadModel>();
     }
 }

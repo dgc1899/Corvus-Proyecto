@@ -34,9 +34,9 @@ namespace Corvus_Proyecto.GUI
             this.lblNomGrup = new System.Windows.Forms.Label();
             this.lblDesc = new System.Windows.Forms.Label();
             this.lblPeriodo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPeriodo = new System.Windows.Forms.TextBox();
             this.cmdAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -78,27 +78,27 @@ namespace Corvus_Proyecto.GUI
             this.lblPeriodo.TabIndex = 3;
             this.lblPeriodo.Text = "Periodo:";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(178, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 4;
+            this.txtNombre.Location = new System.Drawing.Point(178, 41);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 23);
+            this.txtNombre.TabIndex = 4;
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(145, 163);
+            this.txtDesc.Location = new System.Drawing.Point(145, 180);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(205, 111);
             this.txtDesc.TabIndex = 5;
             // 
-            // textBox3
+            // txtPeriodo
             // 
-            this.textBox3.Location = new System.Drawing.Point(178, 93);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 6;
+            this.txtPeriodo.Location = new System.Drawing.Point(178, 93);
+            this.txtPeriodo.Name = "txtPeriodo";
+            this.txtPeriodo.Size = new System.Drawing.Size(100, 23);
+            this.txtPeriodo.TabIndex = 6;
             // 
             // cmdAgregar
             // 
@@ -116,9 +116,9 @@ namespace Corvus_Proyecto.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 366);
             this.Controls.Add(this.cmdAgregar);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPeriodo);
             this.Controls.Add(this.txtDesc);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblPeriodo);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblNomGrup);
@@ -137,9 +137,9 @@ namespace Corvus_Proyecto.GUI
         private System.Windows.Forms.Label lblNomGrup;
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Label lblPeriodo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDesc;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPeriodo;
         private System.Windows.Forms.Button cmdAgregar;
     }
 }

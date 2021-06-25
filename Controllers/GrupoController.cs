@@ -12,19 +12,103 @@ namespace Corvus_Proyecto.Controllers
 {
     public class GrupoController : BaseController
     {
-        public GrupoController(string connString)
-        {
-            _connString = connString;
-        }
-
-        //Agregar nuevo grupo
-        public void Agregar(GrupoModel grupoModel)
+     
+        //Get grupos del docente logeado
+        public static int GetGruposByDocente(int idDocente,int noIconos)
         {
             try
             {
-                using (IDbConnection cnn = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
                 {
-                    cnn.Execute("insert into Grupos(nombreGrupo,periodoGrupo,descGrupo) values(@nombreGrupo,@periodoGrupo,descGrupo)",grupoModel);
+                    using (SQLiteCommand command = new SQLiteCommand(@"select  count (*) from Grupos where idDocente=@idDocente", connection))
+                    {
+                        connection.Open();
+                        command.Parameters.AddWithValue("@idDocente", idDocente);
+
+                        command.ExecuteNonQuery();
+                        noIconos =Convert.ToInt32(command.ExecuteScalar());
+                        return noIconos;
+                        /*using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            if (dt.Rows.Count > 0)
+                            {
+                                noIconos = dt.Rows.Count;
+                                return noIconos;
+                            }
+                            command.ExecuteNonQuery();
+                            connection.Close();
+
+                        }*/
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            
+        }
+
+        //Get nombres de grupos
+        public static string GetNombreGrupo(int idDocente)
+        {
+            string NombreGrupo;
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using (SQLiteCommand command = new SQLiteCommand("select nombreGrupo from Grupos where idDocente=@idDocente", connection))
+                    {
+                        connection.Open();
+                        command.Parameters.AddWithValue("@idDocente", idDocente);
+                        //command.Parameters.AddWithValue("@idGrupo", i);
+                        command.ExecuteNonQuery();  
+
+                        
+                        NombreGrupo = command.ExecuteScalar().ToString();
+                        connection.Close();
+
+                        return NombreGrupo;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+
+            }
+        }
+
+        //Agregar nuevo grupo
+        public bool Agregar(GrupoModel grupoModel)
+        {
+            try
+            {
+               using(SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using (SQLiteCommand command=new SQLiteCommand(@"INSERT INTO Grupos ('nombreGrupo','descGrupo','periodoGrupo','idDocente')
+                    VALUES (@nombreGrupo,@descGrupo,@periodoGrupo,@idDocente)", connection))
+                    {
+                        connection.Open();
+                        command.Parameters.AddWithValue("@nombreGrupo", grupoModel.Nombre);
+                        command.Parameters.AddWithValue("@descGrupo", grupoModel.Descripcion);
+                        command.Parameters.AddWithValue("@periodoGrupo", grupoModel.Periodo);
+                        command.Parameters.AddWithValue("@idDocente", grupoModel.IdDocente);
+
+                        var output=command.ExecuteNonQuery();
+                        if (output == 1)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+
+
+                    }
                 }
             }
             catch(Exception ex)

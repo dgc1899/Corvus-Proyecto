@@ -4,6 +4,9 @@
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="CustomControls\BotonAula.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="GUI\ActividadesGestionar.cs">
       <SubType>Form</SubType>
     </Compile>
