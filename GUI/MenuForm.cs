@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Corvus_Proyecto.GUI.Pizarron;
 
 namespace Corvus_Proyecto.GUI
 {
@@ -39,6 +40,14 @@ namespace Corvus_Proyecto.GUI
             LoginForm loginForma = new LoginForm();
             this.Hide();
             loginForma.Show();
+        }
+
+        private void cmdPizarron_Click(object sender, EventArgs e)
+        {
+            PizzarronForm pizarron = new PizzarronForm();
+            pizarron.Show();
+
+            this.Hide();
         }
     }
 }

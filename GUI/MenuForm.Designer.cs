@@ -68,6 +68,7 @@ namespace Corvus_Proyecto.GUI
             this.cmdPizarron.Size = new System.Drawing.Size(215, 101);
             this.cmdPizarron.TabIndex = 8;
             this.cmdPizarron.UseVisualStyleBackColor = true;
+            this.cmdPizarron.Click += new System.EventHandler(this.cmdPizarron_Click);
             // 
             // cmdGrupos
             // 
