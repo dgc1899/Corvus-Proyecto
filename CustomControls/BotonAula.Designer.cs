@@ -49,11 +49,13 @@ namespace Corvus_Proyecto.CustomControls
             // lblText
             // 
             this.lblText.AutoSize = true;
-            this.lblText.Location = new System.Drawing.Point(63, 105);
+            this.lblText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblText.Location = new System.Drawing.Point(0, 102);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(45, 15);
             this.lblText.TabIndex = 1;
             this.lblText.Text = "Default";
+            this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BotonAula
             // 
@@ -63,6 +65,8 @@ namespace Corvus_Proyecto.CustomControls
             this.Controls.Add(this.button1);
             this.Name = "BotonAula";
             this.Size = new System.Drawing.Size(171, 129);
+            this.MouseEnter += new System.EventHandler(this.BotonAula_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.BotonAula_MouseLeave);
             this.ResumeLayout(false);
             this.PerformLayout();
 

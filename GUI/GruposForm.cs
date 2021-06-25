@@ -37,7 +37,7 @@ namespace Corvus_Proyecto.GUI
         {
             int idDocente;
             int noIconos=0;
-
+            int j = 0;
             idDocente= SqliteDataAccess.GetIdDocente();
 
             //Get no. de iconos a visualizar
@@ -47,7 +47,9 @@ namespace Corvus_Proyecto.GUI
             for (int i = 0; i < botonesAula.Length; i++)
             {
                 botonesAula[i] = new BotonAula();
-                botonesAula[i].CambiarNombre(GrupoController.GetNombreGrupo(idDocente));
+                botonesAula[i].CambiarNombre(GrupoController.GetNombreGrupo(idDocente,j));
+                botonesAula[i].SetIdAula(GrupoController.GetIdGrupo(idDocente, j));
+                j++;
 
                 if (PnlIconos.Controls.Count < 0)
                 {
@@ -56,11 +58,30 @@ namespace Corvus_Proyecto.GUI
                 else
                 {
                     PnlIconos.Controls.Add(botonesAula[i]);
+
+                    //Generar Event handler para cada icono
+                   botonesAula[i].Click += new EventHandler(this.BotonAula_Click);
                 }
             }
           
             
 
+        }
+
+         void BotonAula_Click(object sender, EventArgs e)
+        {
+            //BotonAula boton = (BotonAula)sender;
+           
+            MostrarFormaGrupo();
+
+        }
+
+        //Metodo para que los botones generados dinamicamente abran su respectiva ventana de grupo
+        void MostrarFormaGrupo()
+        {
+            GrupoForm grupo = new GrupoForm();
+            grupo.Show();
+            this.Hide();
         }
 
         public int GetIdentificador()

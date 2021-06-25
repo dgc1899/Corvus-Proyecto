@@ -13,7 +13,7 @@ namespace Corvus_Proyecto.Controllers
     public class GrupoController : BaseController
     {
      
-        //Get grupos del docente logeado
+        //Get cantidad de grupos del docente logeado
         public static int GetGruposByDocente(int idDocente,int noIconos)
         {
             try
@@ -51,30 +51,71 @@ namespace Corvus_Proyecto.Controllers
             
         }
 
-        //Get nombres de grupos
-        public static string GetNombreGrupo(int idDocente)
+        //Get nombres de grupos para los iconos, tomando en cuenta el docente logeado
+        public static string GetNombreGrupo(int idDocente,int j)
         {
             string NombreGrupo;
+            int idGrupo;
+
             try
             {
                 using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
                 {
-                    using (SQLiteCommand command = new SQLiteCommand("select nombreGrupo from Grupos where idDocente=@idDocente", connection))
+                    using (SQLiteCommand command = new SQLiteCommand("select idGrupo,nombreGrupo from Grupos where idDocente=@idDocente", connection))
                     {
                         connection.Open();
                         command.Parameters.AddWithValue("@idDocente", idDocente);
-                        //command.Parameters.AddWithValue("@idGrupo", i);
-                        command.ExecuteNonQuery();  
+                        command.ExecuteNonQuery();
+                        using(SQLiteDataAdapter adapter=new SQLiteDataAdapter(command))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            NombreGrupo = dt.Rows[j]["nombreGrupo"].ToString();
+                            idGrupo = Convert.ToInt32(dt.Rows[j]["idGrupo"]);
+                            return NombreGrupo;
+                        }
 
                         
-                        NombreGrupo = command.ExecuteScalar().ToString();
-                        connection.Close();
-
-                        return NombreGrupo;
                     }
+                           
                 }
             }
             catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+
+            }
+        }
+
+        //Get Id del grupo, esto es para que el icono generado para cada grupo tenga al Id enlazado
+        public static int GetIdGrupo(int idDocente,int j)
+        {
+            int idGrupo;
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using (SQLiteCommand command = new SQLiteCommand("select idGrupo from Grupos where idDocente=@idDocente", connection))
+                    {
+                        connection.Open();
+                        command.Parameters.AddWithValue("@idDocente", idDocente);
+                        command.ExecuteNonQuery();
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            idGrupo = Convert.ToInt32(dt.Rows[j]["idGrupo"]);
+                            return idGrupo;
+                        }
+
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex);
 

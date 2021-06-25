@@ -21,5 +21,12 @@ namespace Corvus_Proyecto.GUI
         {
 
         }
+
+        private void cmdAtras_Click(object sender, EventArgs e)
+        {
+            GruposForma grupos = new GruposForma();
+            grupos.Show();
+            this.Hide();
+        }
     }
 }
