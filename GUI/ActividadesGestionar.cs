@@ -14,7 +14,7 @@ namespace Corvus_Proyecto.GUI
     public partial class ActividadesGestionar : Form
     {
         ActividadController actividadController;
-        int idGrupo;
+        public int idGrupo { get; set; }
         public ActividadesGestionar()
         {
             InitializeComponent();
@@ -36,6 +36,7 @@ namespace Corvus_Proyecto.GUI
         {
             //Nueva actividad
             NuevaActividad nuevaActividad = new NuevaActividad();
+            nuevaActividad.idGrupo = this.idGrupo;
             nuevaActividad.Show();
             this.Hide();
         }

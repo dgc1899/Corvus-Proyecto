@@ -39,9 +39,11 @@ namespace Corvus_Proyecto.GUI
 
         void LLenarListaActividades(int idGrupo)
         {
+            //Poblar la lista de actividades
             try
             {
-                listActividades.Items.Add(ActividadController.GetActividadesByGrupo(idGrupo));
+                listActividades.DataSource = ActividadController.GetActividadesByGrupo(idGrupo);
+                listActividades.DisplayMember = "nombreActividad";
             }
             catch (Exception ex)
             {
@@ -53,6 +55,7 @@ namespace Corvus_Proyecto.GUI
         private void cmdActividades_Click(object sender, EventArgs e)
         {
             ActividadesGestionar actividadesGestionar = new ActividadesGestionar();
+            actividadesGestionar.idGrupo = this.idGrupo;
             actividadesGestionar.Show();
             this.Hide();
         }
@@ -62,6 +65,11 @@ namespace Corvus_Proyecto.GUI
             EvaluacionesGestionar evaluacionesGestionar = new EvaluacionesGestionar();
             evaluacionesGestionar.Show();
             this.Hide();
+        }
+
+        private void cmdRefresh_Click(object sender, EventArgs e)
+        {
+            LLenarListaActividades(idGrupo);
         }
     }
 }

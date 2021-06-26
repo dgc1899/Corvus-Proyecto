@@ -37,6 +37,7 @@ namespace Corvus_Proyecto.GUI
             this.cmdOpciones = new System.Windows.Forms.Button();
             this.cmdAtras = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmdRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listActividades
@@ -111,11 +112,22 @@ namespace Corvus_Proyecto.GUI
             this.label1.Size = new System.Drawing.Size(10, 423);
             this.label1.TabIndex = 6;
             // 
+            // cmdRefresh
+            // 
+            this.cmdRefresh.Location = new System.Drawing.Point(191, 12);
+            this.cmdRefresh.Name = "cmdRefresh";
+            this.cmdRefresh.Size = new System.Drawing.Size(28, 23);
+            this.cmdRefresh.TabIndex = 7;
+            this.cmdRefresh.Text = "R";
+            this.cmdRefresh.UseVisualStyleBackColor = true;
+            this.cmdRefresh.Click += new System.EventHandler(this.cmdRefresh_Click);
+            // 
             // GrupoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 423);
+            this.Controls.Add(this.cmdRefresh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmdAtras);
             this.Controls.Add(this.cmdOpciones);
@@ -140,5 +152,6 @@ namespace Corvus_Proyecto.GUI
         private System.Windows.Forms.Button cmdOpciones;
         private System.Windows.Forms.Button cmdAtras;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button cmdRefresh;
     }
 }

@@ -42,6 +42,7 @@ namespace Corvus_Proyecto.GUI
                     {
                         MessageBox.Show("Actividad agregada");
                         GrupoForm grupoForm = new GrupoForm();
+                        grupoForm.idGrupo = this.idGrupo;
                         grupoForm.Show();
                         this.Hide();
                     }

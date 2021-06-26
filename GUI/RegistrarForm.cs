@@ -31,6 +31,7 @@ namespace Corvus_Proyecto.GUI
             if(registro == true)
             {
                 MessageBox.Show("Registro completado");
+                MessageBox.Show(SqliteDataAccess.GetIdDocente().ToString());
                 LoginForm loginForm = new LoginForm();
                 loginForm.Show();
                 this.Close();

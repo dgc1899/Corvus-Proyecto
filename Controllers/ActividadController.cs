@@ -13,7 +13,7 @@ namespace Corvus_Proyecto.Controllers
     public class ActividadController:BaseController
     {
         //Get Actividades de un grupo determinado para llenar lista
-       public static string GetActividadesByGrupo(int idGrupo)
+       public static DataTable GetActividadesByGrupo(int idGrupo)
         {
             try
               {
@@ -25,25 +25,22 @@ namespace Corvus_Proyecto.Controllers
                           command.Parameters.AddWithValue("@idGrupo", idGrupo);
 
                           command.ExecuteNonQuery();
-                        using(SQLiteDataReader reader = command.ExecuteReader())
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
                         {
-                            while (reader.Read())
-                            {
-                                string nombreActividad = reader.GetString("nombreActividad");
-                                return nombreActividad;
-                            }
-                        }
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            return dt;
 
                         }
+
+                    }
                     }
                 }
                 catch (Exception ex)
                 {
                     throw new Exception(ex.Message, ex);
-                }
-            return "";
-
-            
+                }        
         }
 
         //Get datos de actividades para el DataGrid
