@@ -92,5 +92,10 @@ namespace Corvus_Proyecto
         {
 
         }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

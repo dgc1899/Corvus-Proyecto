@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Corvus_Proyecto.GUI.Pizarron;
+using Corvus_Proyecto.Models;
 
 namespace Corvus_Proyecto.GUI
 {
@@ -18,21 +19,9 @@ namespace Corvus_Proyecto.GUI
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void MenuForm_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void cmdGrupos_Click(object sender, EventArgs e)
-        {
-            GruposForma gruposForma = new GruposForma();
-            this.Hide();
-            gruposForma.Show();
+            getNombreDocente();
         }
 
         private void cmdBack_Click(object sender, EventArgs e)
@@ -42,12 +31,52 @@ namespace Corvus_Proyecto.GUI
             loginForma.Show();
         }
 
+        private void cmdGrupos_Click(object sender, EventArgs e)
+        {
+            abrirGrupos();
+        }
+        private void label_Grupos_Click(object sender, EventArgs e)
+        {
+            abrirGrupos();
+        }
+
+
         private void cmdPizarron_Click(object sender, EventArgs e)
         {
-            PizzarronForm pizarron = new PizzarronForm();
-            pizarron.Show();
+            abrirPizarron();
+        }
 
+        private void label_Pizarron_Click(object sender, EventArgs e)
+        {
+            abrirPizarron();
+        }
+
+        private void abrirPizarron() 
+        {
+            PizzarronForm pizarron = new ();
+            pizarron.Show();
+            //this.Hide();
+        }
+
+        private void abrirGrupos()
+        {
+            GruposForma gruposForma = new GruposForma();
             this.Hide();
+            gruposForma.Show();
+        }
+
+        private void getNombreDocente()
+        {
+            int idDocente;
+            idDocente = SqliteDataAccess.GetIdDocente();
+            String nombreDocnete = "Pepito";
+            /*Agregar get del nombre del docente*/
+            labelNombreDocente.Text = nombreDocnete;
+        }
+
+        private void MenuForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

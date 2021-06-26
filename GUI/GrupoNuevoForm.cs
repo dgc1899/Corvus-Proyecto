@@ -63,5 +63,10 @@ namespace Corvus_Proyecto.GUI
 
 
         }
+
+        private void GrupoNuevoForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -17,16 +17,44 @@ namespace Corvus_Proyecto.GUI
             InitializeComponent();
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void cmdAtras_Click(object sender, EventArgs e)
         {
             GruposForma grupos = new GruposForma();
             grupos.Show();
             this.Hide();
+        }
+
+        private void cmdActividades_Click(object sender, EventArgs e)
+        {
+            ActividadesGestionar actividadesForm = new();
+            this.Hide();
+            actividadesForm.Show();
+        }
+
+        private void cmdEval_Click(object sender, EventArgs e)
+        {
+            EvaluacionesGestionar evaForm = new();
+            this.Hide();
+            evaForm.Show();
+        }
+
+        private void cmdMiembros_Click(object sender, EventArgs e)
+        {
+            Miembros_de_Grupo miembrosForm = new();
+            this.Hide();
+            miembrosForm.Show();
+        }
+
+        private void cmdOpciones_Click(object sender, EventArgs e)
+        {
+            OpcionesForm opForm = new();
+            this.Hide();
+            opForm.Show();
+        }
+
+        private void GrupoForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

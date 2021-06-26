@@ -16,5 +16,29 @@ namespace Corvus_Proyecto.GUI
         {
             InitializeComponent();
         }
+
+        private void cmdAtras_Click(object sender, EventArgs e)
+        {
+            GrupoForm grupoFor = new();
+            this.Hide();
+            grupoFor.Show();
+        }
+
+        private void ActividadesGestionar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdNuevaActividad_Click(object sender, EventArgs e)
+        {
+            NuevaActividad actividadForm = new();
+            this.Hide();
+            actividadForm.Show();
+        }
+
+        private void ActividadesGestionar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -38,10 +38,10 @@ namespace Corvus_Proyecto.GUI
             // PnlIconos
             // 
             this.PnlIconos.AutoScroll = true;
-            this.PnlIconos.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PnlIconos.Location = new System.Drawing.Point(0, 0);
+            this.PnlIconos.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PnlIconos.Location = new System.Drawing.Point(352, 0);
             this.PnlIconos.Name = "PnlIconos";
-            this.PnlIconos.Size = new System.Drawing.Size(432, 450);
+            this.PnlIconos.Size = new System.Drawing.Size(432, 561);
             this.PnlIconos.TabIndex = 6;
             // 
             // cmdNuevoGrupo
@@ -50,9 +50,9 @@ namespace Corvus_Proyecto.GUI
             this.cmdNuevoGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdNuevoGrupo.ForeColor = System.Drawing.Color.White;
             this.cmdNuevoGrupo.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevoGrupo.Image")));
-            this.cmdNuevoGrupo.Location = new System.Drawing.Point(490, 364);
+            this.cmdNuevoGrupo.Location = new System.Drawing.Point(-2, 487);
             this.cmdNuevoGrupo.Name = "cmdNuevoGrupo";
-            this.cmdNuevoGrupo.Size = new System.Drawing.Size(76, 74);
+            this.cmdNuevoGrupo.Size = new System.Drawing.Size(90, 74);
             this.cmdNuevoGrupo.TabIndex = 1;
             this.cmdNuevoGrupo.UseVisualStyleBackColor = true;
             this.cmdNuevoGrupo.Click += new System.EventHandler(this.button1_Click);
@@ -63,9 +63,9 @@ namespace Corvus_Proyecto.GUI
             this.cmdBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdBack.ForeColor = System.Drawing.Color.White;
             this.cmdBack.Image = ((System.Drawing.Image)(resources.GetObject("cmdBack.Image")));
-            this.cmdBack.Location = new System.Drawing.Point(508, 12);
+            this.cmdBack.Location = new System.Drawing.Point(-2, 0);
             this.cmdBack.Name = "cmdBack";
-            this.cmdBack.Size = new System.Drawing.Size(58, 61);
+            this.cmdBack.Size = new System.Drawing.Size(76, 73);
             this.cmdBack.TabIndex = 0;
             this.cmdBack.UseVisualStyleBackColor = true;
             this.cmdBack.Click += new System.EventHandler(this.cmdBack_Click);
@@ -75,12 +75,18 @@ namespace Corvus_Proyecto.GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(578, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.cmdNuevoGrupo);
             this.Controls.Add(this.cmdBack);
             this.Controls.Add(this.PnlIconos);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GruposForma";
-            this.Text = "Grupos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Grupos - Corvus";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GruposForma_FormClosed);
             this.Load += new System.EventHandler(this.GruposForma_Load);
             this.ResumeLayout(false);
 

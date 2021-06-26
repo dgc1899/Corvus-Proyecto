@@ -126,5 +126,10 @@ namespace Corvus_Proyecto.GUI
             this.Hide();
             grupoNuevoForm.Show();
         }
+
+        private void GruposForma_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

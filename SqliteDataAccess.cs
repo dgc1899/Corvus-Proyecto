@@ -31,7 +31,5 @@ namespace Corvus_Proyecto
             return IdDocente;
         }
 
-  
-
     }
 }

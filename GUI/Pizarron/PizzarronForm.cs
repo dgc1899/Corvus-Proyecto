@@ -174,6 +174,15 @@ namespace Corvus_Proyecto.GUI.Pizarron
         }
 
         //Metodos para asignar colores al lapiz y el texto en los textbox
+
+        private void btn_Black_Click(object sender, EventArgs e)
+        {
+
+            if (color != Color.Black)
+                color = btn_Black.BackColor;
+
+        }
+
         private void btn_Red_Click(object sender, EventArgs e)
         {
             if (color != Color.Red)

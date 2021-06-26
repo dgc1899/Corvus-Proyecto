@@ -35,18 +35,19 @@ namespace Corvus_Proyecto
             this.cmdEnter = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdTutorial = new System.Windows.Forms.Button();
             this.cmdRegistrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(81, 159);
+            this.lblId.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblId.Location = new System.Drawing.Point(24, 16);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(64, 15);
+            this.lblId.Size = new System.Drawing.Size(113, 30);
             this.lblId.TabIndex = 0;
             this.lblId.Text = "ID Control:";
             this.lblId.Click += new System.EventHandler(this.label1_Click);
@@ -54,18 +55,20 @@ namespace Corvus_Proyecto
             // lblPass
             // 
             this.lblPass.AutoSize = true;
-            this.lblPass.Location = new System.Drawing.Point(75, 202);
+            this.lblPass.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPass.Location = new System.Drawing.Point(14, 61);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(70, 15);
+            this.lblPass.Size = new System.Drawing.Size(123, 30);
             this.lblPass.TabIndex = 1;
             this.lblPass.Text = "Contraseña:";
             this.lblPass.Click += new System.EventHandler(this.label2_Click);
             // 
             // cmdEnter
             // 
-            this.cmdEnter.Location = new System.Drawing.Point(136, 269);
+            this.cmdEnter.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmdEnter.Location = new System.Drawing.Point(115, 106);
             this.cmdEnter.Name = "cmdEnter";
-            this.cmdEnter.Size = new System.Drawing.Size(87, 23);
+            this.cmdEnter.Size = new System.Drawing.Size(107, 49);
             this.cmdEnter.TabIndex = 2;
             this.cmdEnter.Text = "Entrar";
             this.cmdEnter.UseVisualStyleBackColor = true;
@@ -73,7 +76,7 @@ namespace Corvus_Proyecto
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(151, 156);
+            this.txtId.Location = new System.Drawing.Point(159, 25);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(125, 23);
             this.txtId.TabIndex = 3;
@@ -81,20 +84,11 @@ namespace Corvus_Proyecto
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(152, 199);
+            this.txtPass.Location = new System.Drawing.Point(159, 68);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(125, 23);
             this.txtPass.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(103, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 143);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // cmdTutorial
             // 
@@ -104,7 +98,7 @@ namespace Corvus_Proyecto
             this.cmdTutorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdTutorial.ForeColor = System.Drawing.Color.Transparent;
             this.cmdTutorial.Image = ((System.Drawing.Image)(resources.GetObject("cmdTutorial.Image")));
-            this.cmdTutorial.Location = new System.Drawing.Point(12, 259);
+            this.cmdTutorial.Location = new System.Drawing.Point(14, 174);
             this.cmdTutorial.Name = "cmdTutorial";
             this.cmdTutorial.Size = new System.Drawing.Size(43, 43);
             this.cmdTutorial.TabIndex = 6;
@@ -115,34 +109,49 @@ namespace Corvus_Proyecto
             // 
             this.cmdRegistrar.FlatAppearance.BorderSize = 0;
             this.cmdRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdRegistrar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmdRegistrar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.cmdRegistrar.Location = new System.Drawing.Point(151, 324);
+            this.cmdRegistrar.Location = new System.Drawing.Point(98, 171);
             this.cmdRegistrar.Name = "cmdRegistrar";
-            this.cmdRegistrar.Size = new System.Drawing.Size(72, 22);
+            this.cmdRegistrar.Size = new System.Drawing.Size(149, 41);
             this.cmdRegistrar.TabIndex = 8;
-            this.cmdRegistrar.Text = "Registrate";
+            this.cmdRegistrar.Text = "Regístrate";
             this.cmdRegistrar.UseVisualStyleBackColor = true;
             this.cmdRegistrar.Click += new System.EventHandler(this.cmdRegistrar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.cmdRegistrar);
+            this.panel1.Controls.Add(this.cmdTutorial);
+            this.panel1.Controls.Add(this.txtPass);
+            this.panel1.Controls.Add(this.txtId);
+            this.panel1.Controls.Add(this.cmdEnter);
+            this.panel1.Controls.Add(this.lblPass);
+            this.panel1.Controls.Add(this.lblId);
+            this.panel1.Location = new System.Drawing.Point(221, 246);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(334, 235);
+            this.panel1.TabIndex = 9;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 348);
-            this.Controls.Add(this.cmdRegistrar);
-            this.Controls.Add(this.cmdTutorial);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.cmdEnter);
-            this.Controls.Add(this.lblPass);
-            this.Controls.Add(this.lblId);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
-            this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login - Corvus";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -153,9 +162,9 @@ namespace Corvus_Proyecto
         private System.Windows.Forms.Button cmdEnter;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmdTutorial;
         private System.Windows.Forms.Button cmdRegistrar;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

@@ -60,6 +60,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.toolStripButton2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.txtLargo = new System.Windows.Forms.ToolStripTextBox();
+            this.btn_Black = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxlienzo)).BeginInit();
             this.bmenus.SuspendLayout();
             this.bherramientas.SuspendLayout();
@@ -70,7 +71,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.pbxlienzo.BackColor = System.Drawing.Color.White;
             this.pbxlienzo.Location = new System.Drawing.Point(12, 55);
             this.pbxlienzo.Name = "pbxlienzo";
-            this.pbxlienzo.Size = new System.Drawing.Size(726, 386);
+            this.pbxlienzo.Size = new System.Drawing.Size(726, 435);
             this.pbxlienzo.TabIndex = 13;
             this.pbxlienzo.TabStop = false;
             this.pbxlienzo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pbxlienzo_MouseDoubleClick);
@@ -83,7 +84,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.btn_Orange.BackColor = System.Drawing.Color.Orange;
             this.btn_Orange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Orange.ForeColor = System.Drawing.Color.Orange;
-            this.btn_Orange.Location = new System.Drawing.Point(744, 391);
+            this.btn_Orange.Location = new System.Drawing.Point(744, 449);
             this.btn_Orange.Name = "btn_Orange";
             this.btn_Orange.Size = new System.Drawing.Size(44, 41);
             this.btn_Orange.TabIndex = 28;
@@ -95,7 +96,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.btn_Yellow.BackColor = System.Drawing.Color.Yellow;
             this.btn_Yellow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Yellow.ForeColor = System.Drawing.Color.Yellow;
-            this.btn_Yellow.Location = new System.Drawing.Point(744, 344);
+            this.btn_Yellow.Location = new System.Drawing.Point(744, 402);
             this.btn_Yellow.Name = "btn_Yellow";
             this.btn_Yellow.Size = new System.Drawing.Size(44, 41);
             this.btn_Yellow.TabIndex = 27;
@@ -107,7 +108,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.btn_Green.BackColor = System.Drawing.Color.Green;
             this.btn_Green.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Green.ForeColor = System.Drawing.Color.Green;
-            this.btn_Green.Location = new System.Drawing.Point(744, 297);
+            this.btn_Green.Location = new System.Drawing.Point(744, 355);
             this.btn_Green.Name = "btn_Green";
             this.btn_Green.Size = new System.Drawing.Size(44, 41);
             this.btn_Green.TabIndex = 26;
@@ -119,7 +120,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.btn_Aqua.BackColor = System.Drawing.Color.Aqua;
             this.btn_Aqua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Aqua.ForeColor = System.Drawing.Color.Aqua;
-            this.btn_Aqua.Location = new System.Drawing.Point(744, 250);
+            this.btn_Aqua.Location = new System.Drawing.Point(744, 308);
             this.btn_Aqua.Name = "btn_Aqua";
             this.btn_Aqua.Size = new System.Drawing.Size(44, 41);
             this.btn_Aqua.TabIndex = 25;
@@ -131,7 +132,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.btn_Blue.BackColor = System.Drawing.Color.Blue;
             this.btn_Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Blue.ForeColor = System.Drawing.Color.Blue;
-            this.btn_Blue.Location = new System.Drawing.Point(744, 203);
+            this.btn_Blue.Location = new System.Drawing.Point(744, 261);
             this.btn_Blue.Name = "btn_Blue";
             this.btn_Blue.Size = new System.Drawing.Size(44, 41);
             this.btn_Blue.TabIndex = 24;
@@ -143,7 +144,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.btn_Brown.BackColor = System.Drawing.Color.Brown;
             this.btn_Brown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Brown.ForeColor = System.Drawing.Color.Brown;
-            this.btn_Brown.Location = new System.Drawing.Point(744, 158);
+            this.btn_Brown.Location = new System.Drawing.Point(744, 216);
             this.btn_Brown.Name = "btn_Brown";
             this.btn_Brown.Size = new System.Drawing.Size(44, 39);
             this.btn_Brown.TabIndex = 23;
@@ -155,7 +156,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.btn_Purple.BackColor = System.Drawing.Color.Purple;
             this.btn_Purple.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Purple.ForeColor = System.Drawing.Color.Purple;
-            this.btn_Purple.Location = new System.Drawing.Point(744, 113);
+            this.btn_Purple.Location = new System.Drawing.Point(744, 171);
             this.btn_Purple.Name = "btn_Purple";
             this.btn_Purple.Size = new System.Drawing.Size(44, 39);
             this.btn_Purple.TabIndex = 22;
@@ -167,7 +168,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.btn_Red.BackColor = System.Drawing.Color.Red;
             this.btn_Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Red.ForeColor = System.Drawing.Color.Red;
-            this.btn_Red.Location = new System.Drawing.Point(744, 68);
+            this.btn_Red.Location = new System.Drawing.Point(744, 126);
             this.btn_Red.Name = "btn_Red";
             this.btn_Red.Size = new System.Drawing.Size(44, 39);
             this.btn_Red.TabIndex = 21;
@@ -182,7 +183,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.helpToolStripMenuItem});
             this.bmenus.Location = new System.Drawing.Point(0, 0);
             this.bmenus.Name = "bmenus";
-            this.bmenus.Size = new System.Drawing.Size(800, 24);
+            this.bmenus.Size = new System.Drawing.Size(823, 24);
             this.bmenus.TabIndex = 29;
             this.bmenus.Text = "menuStrip1";
             // 
@@ -230,7 +231,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.txtLargo});
             this.bherramientas.Location = new System.Drawing.Point(0, 24);
             this.bherramientas.Name = "bherramientas";
-            this.bherramientas.Size = new System.Drawing.Size(800, 28);
+            this.bherramientas.Size = new System.Drawing.Size(823, 28);
             this.bherramientas.TabIndex = 30;
             this.bherramientas.Text = "toolStrip1";
             // 
@@ -368,11 +369,24 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.txtLargo.Name = "txtLargo";
             this.txtLargo.Size = new System.Drawing.Size(23, 28);
             // 
+            // btn_Black
+            // 
+            this.btn_Black.BackColor = System.Drawing.Color.Black;
+            this.btn_Black.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Black.ForeColor = System.Drawing.Color.Black;
+            this.btn_Black.Location = new System.Drawing.Point(744, 81);
+            this.btn_Black.Name = "btn_Black";
+            this.btn_Black.Size = new System.Drawing.Size(44, 39);
+            this.btn_Black.TabIndex = 31;
+            this.btn_Black.UseVisualStyleBackColor = false;
+            this.btn_Black.Click += new System.EventHandler(this.btn_Black_Click);
+            // 
             // PizzarronForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(823, 502);
+            this.Controls.Add(this.btn_Black);
             this.Controls.Add(this.bherramientas);
             this.Controls.Add(this.bmenus);
             this.Controls.Add(this.btn_Orange);
@@ -384,8 +398,9 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.Controls.Add(this.btn_Purple);
             this.Controls.Add(this.btn_Red);
             this.Controls.Add(this.pbxlienzo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PizzarronForm";
-            this.Text = "Pizzarron";
+            this.Text = "Pizzarron - Corvus";
             ((System.ComponentModel.ISupportInitialize)(this.pbxlienzo)).EndInit();
             this.bmenus.ResumeLayout(false);
             this.bmenus.PerformLayout();
@@ -427,5 +442,6 @@ namespace Corvus_Proyecto.GUI.Pizarron
         private System.Windows.Forms.ToolStripLabel toolStripButton2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripTextBox txtLargo;
+        private System.Windows.Forms.Button btn_Black;
     }
 }

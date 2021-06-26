@@ -40,5 +40,17 @@ namespace Corvus_Proyecto.GUI
                 MessageBox.Show("Intentar de nuevo");
             }
         }
+
+        private void cmdBack_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForma = new LoginForm();
+            this.Hide();
+            loginForma.Show();
+        }
+
+        private void RegistrarForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

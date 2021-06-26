@@ -22,9 +22,16 @@ namespace Corvus_Proyecto.GUI
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void cmdAtras_Click(object sender, EventArgs e)
         {
+            GrupoForm grupoFor = new();
+            this.Hide();
+            grupoFor.Show();
+        }
 
+        private void OpcionesForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

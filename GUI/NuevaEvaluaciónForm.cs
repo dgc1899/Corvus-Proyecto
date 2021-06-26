@@ -16,5 +16,17 @@ namespace Corvus_Proyecto.GUI
         {
             InitializeComponent();
         }
+
+        private void cmdBack_Click(object sender, EventArgs e)
+        {
+            EvaluacionesGestionar evuaGesForm = new ();
+            this.Hide();
+            evuaGesForm.Show();
+        }
+
+        private void Nueva_evaluación_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
