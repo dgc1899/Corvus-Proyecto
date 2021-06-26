@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Corvus_Proyecto.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Corvus_Proyecto.GUI
 {
     public partial class GrupoForm : Form
     {
+        public int idGrupo{get;set;}
+
         public GrupoForm()
         {
             InitializeComponent();
@@ -26,6 +29,38 @@ namespace Corvus_Proyecto.GUI
         {
             GruposForma grupos = new GruposForma();
             grupos.Show();
+            this.Hide();
+        }
+
+        private void GrupoForm_Load(object sender, EventArgs e)
+        {
+            LLenarListaActividades(idGrupo);
+        }
+
+        void LLenarListaActividades(int idGrupo)
+        {
+            try
+            {
+                listActividades.Items.Add(ActividadController.GetActividadesByGrupo(idGrupo));
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message,ex);
+            }
+        }
+
+        private void cmdActividades_Click(object sender, EventArgs e)
+        {
+            ActividadesGestionar actividadesGestionar = new ActividadesGestionar();
+            actividadesGestionar.Show();
+            this.Hide();
+        }
+
+        private void cmdEval_Click(object sender, EventArgs e)
+        {
+            EvaluacionesGestionar evaluacionesGestionar = new EvaluacionesGestionar();
+            evaluacionesGestionar.Show();
             this.Hide();
         }
     }

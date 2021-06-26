@@ -31,7 +31,8 @@ namespace Corvus_Proyecto.GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActividadesGestionar));
             this.cmdNuevaActividad = new System.Windows.Forms.Button();
-            this.listActividades = new System.Windows.Forms.ListBox();
+            this.gridActividades = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gridActividades)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdNuevaActividad
@@ -40,30 +41,33 @@ namespace Corvus_Proyecto.GUI
             this.cmdNuevaActividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdNuevaActividad.ForeColor = System.Drawing.Color.White;
             this.cmdNuevaActividad.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevaActividad.Image")));
-            this.cmdNuevaActividad.Location = new System.Drawing.Point(187, 358);
+            this.cmdNuevaActividad.Location = new System.Drawing.Point(288, 358);
             this.cmdNuevaActividad.Name = "cmdNuevaActividad";
             this.cmdNuevaActividad.Size = new System.Drawing.Size(76, 74);
             this.cmdNuevaActividad.TabIndex = 2;
             this.cmdNuevaActividad.UseVisualStyleBackColor = true;
+            this.cmdNuevaActividad.Click += new System.EventHandler(this.cmdNuevaActividad_Click);
             // 
-            // listActividades
+            // gridActividades
             // 
-            this.listActividades.FormattingEnabled = true;
-            this.listActividades.ItemHeight = 15;
-            this.listActividades.Location = new System.Drawing.Point(69, 12);
-            this.listActividades.Name = "listActividades";
-            this.listActividades.Size = new System.Drawing.Size(287, 319);
-            this.listActividades.TabIndex = 3;
+            this.gridActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridActividades.Location = new System.Drawing.Point(12, 12);
+            this.gridActividades.Name = "gridActividades";
+            this.gridActividades.RowTemplate.Height = 25;
+            this.gridActividades.Size = new System.Drawing.Size(628, 327);
+            this.gridActividades.TabIndex = 3;
             // 
             // ActividadesGestionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 444);
-            this.Controls.Add(this.listActividades);
+            this.ClientSize = new System.Drawing.Size(652, 444);
+            this.Controls.Add(this.gridActividades);
             this.Controls.Add(this.cmdNuevaActividad);
             this.Name = "ActividadesGestionar";
             this.Text = "ActividadesGestionar";
+            this.Load += new System.EventHandler(this.ActividadesGestionar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridActividades)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -71,6 +75,6 @@ namespace Corvus_Proyecto.GUI
         #endregion
 
         private System.Windows.Forms.Button cmdNuevaActividad;
-        private System.Windows.Forms.ListBox listActividades;
+        private System.Windows.Forms.DataGridView gridActividades;
     }
 }

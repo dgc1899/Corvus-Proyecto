@@ -28,19 +28,7 @@ namespace Corvus_Proyecto.Controllers
                         command.ExecuteNonQuery();
                         noIconos =Convert.ToInt32(command.ExecuteScalar());
                         return noIconos;
-                        /*using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
-                        {
-                            DataTable dt = new DataTable();
-                            adapter.Fill(dt);
-                            if (dt.Rows.Count > 0)
-                            {
-                                noIconos = dt.Rows.Count;
-                                return noIconos;
-                            }
-                            command.ExecuteNonQuery();
-                            connection.Close();
-
-                        }*/
+            
                     }
                 }
             }

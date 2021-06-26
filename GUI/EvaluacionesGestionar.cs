@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Corvus_Proyecto.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,25 @@ namespace Corvus_Proyecto.GUI
 {
     public partial class EvaluacionesGestionar : Form
     {
+        int idGrupo;
         public EvaluacionesGestionar()
         {
             InitializeComponent();
+        }
+
+        private void EvaluacionesGestionar_Load(object sender, EventArgs e)
+        {
+            //Poblar DataGrid de Examenes
+            ExamenController examenController = new ExamenController();
+            gridEvaluaciones.DataSource = examenController.GetExamenes(idGrupo);
+        }
+
+        private void cmdNuevaEvaluacion_Click(object sender, EventArgs e)
+        {
+            //Nueva actividad
+            Nueva_evaluación nueva_Evaluación = new Nueva_evaluación();
+            nueva_Evaluación.Show();
+            this.Hide();
         }
     }
 }

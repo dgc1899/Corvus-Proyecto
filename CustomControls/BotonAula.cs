@@ -24,6 +24,11 @@ namespace Corvus_Proyecto.CustomControls
         {
             idAula = idGrupo;
         }
+
+        public int GetIdAula()
+        {
+            return idAula;
+        }
         public void CambiarNombre(string nombre)
         {
             nombreAula = nombre;

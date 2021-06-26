@@ -60,7 +60,7 @@ namespace Corvus_Proyecto.GUI
                     PnlIconos.Controls.Add(botonesAula[i]);
 
                     //Generar Event handler para cada icono
-                   botonesAula[i].Click += new EventHandler(this.BotonAula_Click);
+                   botonesAula[i].Click += new EventHandler(BotonAula_Click);
                 }
             }
           
@@ -70,16 +70,17 @@ namespace Corvus_Proyecto.GUI
 
          void BotonAula_Click(object sender, EventArgs e)
         {
-            //BotonAula boton = (BotonAula)sender;
-           
-            MostrarFormaGrupo();
+            BotonAula boton = (BotonAula)sender;
+            MostrarFormaGrupo(boton.GetIdAula());
+            
 
         }
 
         //Metodo para que los botones generados dinamicamente abran su respectiva ventana de grupo
-        void MostrarFormaGrupo()
+        void MostrarFormaGrupo(int idAula)
         {
             GrupoForm grupo = new GrupoForm();
+            grupo.idGrupo = idAula;
             grupo.Show();
             this.Hide();
         }

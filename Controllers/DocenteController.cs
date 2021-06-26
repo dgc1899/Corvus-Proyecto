@@ -60,8 +60,6 @@ namespace Corvus_Proyecto.Controllers
                     using (SQLiteCommand command=new SQLiteCommand(@"INSERT INTO Docentes ('nombreDocente','passDocente') VALUES (@nombreDocente,@passDocente)",
                         connection))
                     {
-                        // command.Parameters.Add(new SQLiteParameter("@nombreDocente", dto.user));
-                        //command.Parameters.Add(new SQLiteParameter("@passDocente", dto.pass));
                         connection.Open();
                         command.Parameters.AddWithValue("@nombreDocente", dto.user);
                         command.Parameters.AddWithValue("@passDocente", dto.pass);

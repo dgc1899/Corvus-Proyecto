@@ -31,7 +31,8 @@ namespace Corvus_Proyecto.GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EvaluacionesGestionar));
             this.cmdNuevaEvaluacion = new System.Windows.Forms.Button();
-            this.listEvaluaciones = new System.Windows.Forms.ListBox();
+            this.gridEvaluaciones = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEvaluaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdNuevaEvaluacion
@@ -40,31 +41,33 @@ namespace Corvus_Proyecto.GUI
             this.cmdNuevaEvaluacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdNuevaEvaluacion.ForeColor = System.Drawing.Color.White;
             this.cmdNuevaEvaluacion.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevaEvaluacion.Image")));
-            this.cmdNuevaEvaluacion.Location = new System.Drawing.Point(180, 320);
+            this.cmdNuevaEvaluacion.Location = new System.Drawing.Point(293, 358);
             this.cmdNuevaEvaluacion.Name = "cmdNuevaEvaluacion";
             this.cmdNuevaEvaluacion.Size = new System.Drawing.Size(76, 74);
             this.cmdNuevaEvaluacion.TabIndex = 3;
             this.cmdNuevaEvaluacion.UseVisualStyleBackColor = true;
+            this.cmdNuevaEvaluacion.Click += new System.EventHandler(this.cmdNuevaEvaluacion_Click);
             // 
-            // listEvaluaciones
+            // gridEvaluaciones
             // 
-            this.listEvaluaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listEvaluaciones.FormattingEnabled = true;
-            this.listEvaluaciones.ItemHeight = 15;
-            this.listEvaluaciones.Location = new System.Drawing.Point(85, 14);
-            this.listEvaluaciones.Name = "listEvaluaciones";
-            this.listEvaluaciones.Size = new System.Drawing.Size(261, 285);
-            this.listEvaluaciones.TabIndex = 4;
+            this.gridEvaluaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEvaluaciones.Location = new System.Drawing.Point(12, 12);
+            this.gridEvaluaciones.Name = "gridEvaluaciones";
+            this.gridEvaluaciones.RowTemplate.Height = 25;
+            this.gridEvaluaciones.Size = new System.Drawing.Size(628, 330);
+            this.gridEvaluaciones.TabIndex = 4;
             // 
             // EvaluacionesGestionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 406);
-            this.Controls.Add(this.listEvaluaciones);
+            this.ClientSize = new System.Drawing.Size(652, 444);
+            this.Controls.Add(this.gridEvaluaciones);
             this.Controls.Add(this.cmdNuevaEvaluacion);
             this.Name = "EvaluacionesGestionar";
             this.Text = "EvaluacionesGestionar";
+            this.Load += new System.EventHandler(this.EvaluacionesGestionar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridEvaluaciones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -72,6 +75,6 @@ namespace Corvus_Proyecto.GUI
         #endregion
 
         private System.Windows.Forms.Button cmdNuevaEvaluacion;
-        private System.Windows.Forms.ListBox listEvaluaciones;
+        private System.Windows.Forms.DataGridView gridEvaluaciones;
     }
 }
