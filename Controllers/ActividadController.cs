@@ -109,6 +109,34 @@ namespace Corvus_Proyecto.Controllers
                 throw new Exception(ex.Message, ex);
             }
         }
+
+        //Eliminar una actividad existente, segun el registro seleccionado en el DataGrid
+        public bool Eliminar(ActividadModel actividadModel)
+        {
+            try
+            {
+                using (SQLiteConnection connection= new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using(SQLiteCommand command = new SQLiteCommand("delete from Actividades where noActividad=@noActividad", connection))
+                    {
+                        command.Parameters.AddWithValue("@noActividad",actividadModel.IdActividad); 
+                        connection.Open();
+                       var verify =command.ExecuteNonQuery();
+                        if (verify == 1)
+                        {
+                            return true;
+                        }
+                        else
+                            return false;
+                       
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
     }
 
 }

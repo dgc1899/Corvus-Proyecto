@@ -63,6 +63,7 @@ namespace Corvus_Proyecto.GUI
         private void cmdEval_Click(object sender, EventArgs e)
         {
             EvaluacionesGestionar evaluacionesGestionar = new EvaluacionesGestionar();
+            evaluacionesGestionar.idGrupo = this.idGrupo;
             evaluacionesGestionar.Show();
             this.Hide();
         }

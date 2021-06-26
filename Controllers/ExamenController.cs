@@ -83,10 +83,15 @@ namespace Corvus_Proyecto.Controllers
             {
                 using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
                 {
-                    using (SQLiteCommand command = new SQLiteCommand("insert into Examenes values (@UnidadExamen,@fechaExamen,@idGrupo)" , connection))
+                    using (SQLiteCommand command = new SQLiteCommand("insert into Examenes (nombreExamen,descExamen,UnidadExamen,fechaExamen,fechaLimiteExamen,idGrupo) " +
+                        "values (@nombreExamen,@descExamen,@UnidadExamen,@fechaExamen,@fechaLimiteExamen,@idGrupo)" , connection))
+
                     {
-                        command.Parameters.AddWithValue("@UnidadExamen", examenModel.NombreActividad);
+                        command.Parameters.AddWithValue("@nombreExamen", examenModel.NombreActividad);
+                        command.Parameters.AddWithValue("@descExamen", examenModel.DescActividad);
+                        command.Parameters.AddWithValue("@UnidadExamen", examenModel.UnidadExamen);
                         command.Parameters.AddWithValue("@fechaExamen", examenModel.FechaActividad);
+                        command.Parameters.AddWithValue("@fechaLimiteExamen", examenModel.FechaLimiteExamen);
                         command.Parameters.AddWithValue("@idGrupo", examenModel.IdGrupo);
 
                         connection.Open();
