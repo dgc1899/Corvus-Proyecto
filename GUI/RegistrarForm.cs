@@ -31,7 +31,11 @@ namespace Corvus_Proyecto.GUI
             if(registro == true)
             {
                 MessageBox.Show("Registro completado");
-                MessageBox.Show(SqliteDataAccess.GetIdDocente().ToString());
+
+                //Llamada a metodo para conseguir el ID del docente que se acaba de  registrar
+                int idInsertado = docenteController.GetIdDocente();
+                MessageBox.Show("ID: "+idInsertado.ToString(),"Tu ID");
+
                 LoginForm loginForm = new LoginForm();
                 loginForm.Show();
                 this.Close();

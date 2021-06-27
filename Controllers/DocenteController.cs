@@ -85,6 +85,38 @@ namespace Corvus_Proyecto.Controllers
             
         }
 
+        //Metodo para obtener el ID del docente que se acaba de registrar, esto es provisional
+        public int GetIdDocente()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using (SQLiteCommand command = new SQLiteCommand("select seq from sqlite_sequence where name='Docentes' ", connection))
+                    {
+                        connection.Open();
+
+                        int idDocente = Convert.ToInt32(command.ExecuteScalar());
+                        if (idDocente != 0)
+                        {
+                            return idDocente;
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message,ex);
+            }
+           
+            
+        }
+
        
 
 
