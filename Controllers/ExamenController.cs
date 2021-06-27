@@ -141,5 +141,39 @@ namespace Corvus_Proyecto.Controllers
                 throw new Exception(ex.Message, ex);
             }
         }
+
+        //Modificar un examen existente
+        public bool Modificar(ExamenModel examenModel)
+        {
+            try
+            {
+                using(SQLiteConnection connection=new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using(SQLiteCommand command=new SQLiteCommand("update Examenes set nombreExamen=@nombreExamen,descExamen=@descExamen,UnidadExamen=@UnidadExamen," +
+                        "fechaLimiteExamen=@fechaLimiteExamen where idExamen=@idExamen",connection))
+                    {
+                        connection.Open();
+
+                        command.Parameters.AddWithValue("@nombreExamen", examenModel.NombreActividad);
+                        command.Parameters.AddWithValue("@descExamen", examenModel.DescActividad);
+                        command.Parameters.AddWithValue("@UnidadExamen", examenModel.UnidadExamen);
+                        command.Parameters.AddWithValue("@fechaLimiteExamen", examenModel.FechaLimiteExamen);
+                        command.Parameters.AddWithValue("@idExamen", examenModel.IdActividad);
+
+                        var output = command.ExecuteNonQuery();
+                        if (output == 1)
+                        {
+                            return true;
+                        }
+                        else
+                            return false;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
     }
 }

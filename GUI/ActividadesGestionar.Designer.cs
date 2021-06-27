@@ -34,6 +34,7 @@ namespace Corvus_Proyecto.GUI
             this.gridActividades = new System.Windows.Forms.DataGridView();
             this.cmdAtras = new System.Windows.Forms.Button();
             this.cmdEliminar = new System.Windows.Forms.Button();
+            this.cmdUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridActividades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,18 +79,31 @@ namespace Corvus_Proyecto.GUI
             this.cmdEliminar.FlatAppearance.BorderSize = 0;
             this.cmdEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdEliminar.Image = ((System.Drawing.Image)(resources.GetObject("cmdEliminar.Image")));
-            this.cmdEliminar.Location = new System.Drawing.Point(607, 416);
+            this.cmdEliminar.Location = new System.Drawing.Point(599, 45);
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.Size = new System.Drawing.Size(33, 32);
             this.cmdEliminar.TabIndex = 8;
             this.cmdEliminar.UseVisualStyleBackColor = true;
             this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
             // 
+            // cmdUpdate
+            // 
+            this.cmdUpdate.FlatAppearance.BorderSize = 0;
+            this.cmdUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdUpdate.Image = ((System.Drawing.Image)(resources.GetObject("cmdUpdate.Image")));
+            this.cmdUpdate.Location = new System.Drawing.Point(594, 416);
+            this.cmdUpdate.Name = "cmdUpdate";
+            this.cmdUpdate.Size = new System.Drawing.Size(38, 37);
+            this.cmdUpdate.TabIndex = 9;
+            this.cmdUpdate.UseVisualStyleBackColor = true;
+            this.cmdUpdate.Click += new System.EventHandler(this.cmdUpdate_Click);
+            // 
             // ActividadesGestionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 501);
+            this.Controls.Add(this.cmdUpdate);
             this.Controls.Add(this.cmdEliminar);
             this.Controls.Add(this.cmdAtras);
             this.Controls.Add(this.gridActividades);
@@ -109,5 +123,6 @@ namespace Corvus_Proyecto.GUI
         private System.Windows.Forms.DataGridView gridActividades;
         private System.Windows.Forms.Button cmdAtras;
         private System.Windows.Forms.Button cmdEliminar;
+        private System.Windows.Forms.Button cmdUpdate;
     }
 }

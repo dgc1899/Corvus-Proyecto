@@ -15,6 +15,7 @@ namespace Corvus_Proyecto.GUI
     public partial class ActividadesGestionar : Form
     {
         ActividadController actividadController;
+        ActividadModel actividadModel;
         public int idGrupo { get; set; }
         public ActividadesGestionar()
         {
@@ -52,8 +53,7 @@ namespace Corvus_Proyecto.GUI
 
         private void cmdEliminar_Click(object sender, EventArgs e)
         {
-            ActividadModel actividadModel;
-            ActividadController actividadController;
+           
             //Eliminar el registro seleccionado
             try
             {
@@ -69,6 +69,40 @@ namespace Corvus_Proyecto.GUI
                     if (output == true)
                     {
                         MessageBox.Show("Registro eliminado");
+                        PoblarDataGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Intenta de nuevo");
+                    }
+
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+        private void cmdUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Esto va a modificar el registro seleccionado", "¿Seguro que desea modificar?", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    actividadModel = new ActividadModel();
+                    actividadController = new ActividadController();
+
+                    actividadModel.IdActividad = Convert.ToInt32(gridActividades.CurrentRow.Cells["noActividad"].Value);
+                    actividadModel.NombreActividad = gridActividades.CurrentRow.Cells["nombreActividad"].Value.ToString();
+                    actividadModel.DescActividad = gridActividades.CurrentRow.Cells["descActividad"].Value.ToString();
+
+                    bool output = actividadController.Modificar(actividadModel);
+
+                    if (output == true)
+                    {
+                        MessageBox.Show("Registro modificado");
                         PoblarDataGrid();
                     }
                     else

@@ -137,6 +137,38 @@ namespace Corvus_Proyecto.Controllers
                 throw new Exception(ex.Message, ex);
             }
         }
+
+        //Modificar una actividad existente
+        public bool Modificar(ActividadModel actividadModel)
+        {
+            try
+            {
+                using(SQLiteConnection connection=new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using(SQLiteCommand command=new SQLiteCommand("update Actividades set nombreActividad=@nombreActividad,descActividad=@descActividad where noActividad=@noActividad", connection))
+                    {
+                        connection.Open();
+
+                        command.Parameters.AddWithValue("@noActividad", actividadModel.IdActividad);
+                        command.Parameters.AddWithValue("@nombreActividad", actividadModel.NombreActividad);
+                        command.Parameters.AddWithValue("@descActividad", actividadModel.DescActividad);
+
+                       var output= command.ExecuteNonQuery();
+
+                        if (output == 1)
+                        {
+                            return true;
+                        }
+                        else
+                            return false;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
     }
 
 }

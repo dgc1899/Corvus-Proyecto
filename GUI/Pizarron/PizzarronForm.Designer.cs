@@ -60,6 +60,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.toolStripButton2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.txtLargo = new System.Windows.Forms.ToolStripTextBox();
+            this.cmdAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxlienzo)).BeginInit();
             this.bmenus.SuspendLayout();
             this.bherramientas.SuspendLayout();
@@ -368,11 +369,26 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.txtLargo.Name = "txtLargo";
             this.txtLargo.Size = new System.Drawing.Size(23, 28);
             // 
+            // cmdAtras
+            // 
+            this.cmdAtras.AutoSize = true;
+            this.cmdAtras.FlatAppearance.BorderSize = 0;
+            this.cmdAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdAtras.ForeColor = System.Drawing.Color.Transparent;
+            this.cmdAtras.Image = ((System.Drawing.Image)(resources.GetObject("cmdAtras.Image")));
+            this.cmdAtras.Location = new System.Drawing.Point(12, 447);
+            this.cmdAtras.Name = "cmdAtras";
+            this.cmdAtras.Size = new System.Drawing.Size(78, 67);
+            this.cmdAtras.TabIndex = 31;
+            this.cmdAtras.UseVisualStyleBackColor = true;
+            this.cmdAtras.Click += new System.EventHandler(this.cmdAtras_Click);
+            // 
             // PizzarronForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 517);
+            this.Controls.Add(this.cmdAtras);
             this.Controls.Add(this.bherramientas);
             this.Controls.Add(this.bmenus);
             this.Controls.Add(this.btn_Orange);
@@ -427,5 +443,6 @@ namespace Corvus_Proyecto.GUI.Pizarron
         private System.Windows.Forms.ToolStripLabel toolStripButton2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripTextBox txtLargo;
+        private System.Windows.Forms.Button cmdAtras;
     }
 }

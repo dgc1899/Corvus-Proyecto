@@ -14,6 +14,8 @@ namespace Corvus_Proyecto.GUI
 {
     public partial class EvaluacionesGestionar : Form
     {
+        ExamenModel examenModel;
+        ExamenController examenController;
         public int idGrupo { get; set; }
         public EvaluacionesGestionar()
         {
@@ -51,8 +53,6 @@ namespace Corvus_Proyecto.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ExamenModel examenModel;
-            ExamenController examenController;
             //Eliminar el registro seleccionado
             try
             {
@@ -81,7 +81,44 @@ namespace Corvus_Proyecto.GUI
             {
                 throw new Exception(ex.Message, ex);
             }
-        }   
+        }
+        //Modificar una evaluacion
+
+        private void cmdUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Esto va a modificar el registro seleccionado", "¿Seguro que desea modificar?", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    examenController = new ExamenController();
+                    examenModel = new ExamenModel();
+
+                    examenModel.IdActividad = Convert.ToInt32(gridEvaluaciones.CurrentRow.Cells["idExamen"].Value);
+                    examenModel.NombreActividad = gridEvaluaciones.CurrentRow.Cells["nombreExamen"].Value.ToString();
+                    examenModel.DescActividad = gridEvaluaciones.CurrentRow.Cells["descExamen"].Value.ToString();
+                    examenModel.UnidadExamen = Convert.ToInt32(gridEvaluaciones.CurrentRow.Cells["unidadExamen"].Value);
+                    examenModel.FechaLimiteExamen = gridEvaluaciones.CurrentRow.Cells["fechaLimiteExamen"].Value.ToString();
+
+                    bool verify=examenController.Modificar(examenModel);
+                    if (verify == true)
+                    {
+                        MessageBox.Show("Registro modificado");
+                        PoblarDataGrid();
+                    }
+                    else
+                        MessageBox.Show("Intentar de nuevo");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message,ex);
+            }
+           
+        }
+
+
     }
     
 }

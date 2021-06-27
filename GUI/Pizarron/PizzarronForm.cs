@@ -267,5 +267,12 @@ namespace Corvus_Proyecto.GUI.Pizarron
 
             MessageBox.Show(existingContent, "Help");
         }
+
+        private void cmdAtras_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm();
+            menuForm.Show();
+            this.Hide();
+        }
     }
 }
