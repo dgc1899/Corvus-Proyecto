@@ -7,6 +7,9 @@
     <Compile Update="GUI\ActividadesGestionar.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\ConsultarActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\EvaluacionesGestionar.cs">
       <SubType>Form</SubType>
     </Compile>

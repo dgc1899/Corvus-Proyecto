@@ -43,6 +43,7 @@ namespace Corvus_Proyecto.GUI
             try
             {
                 listActividades.DataSource = ActividadController.GetActividadesByGrupo(idGrupo);
+                listActividades.ValueMember = "noActividad";
                 listActividades.DisplayMember = "nombreActividad";
             }
             catch (Exception ex)
@@ -86,6 +87,16 @@ namespace Corvus_Proyecto.GUI
             OpcionesForm opcionesForm = new OpcionesForm();
             opcionesForm.idGrupo = this.idGrupo;
             opcionesForm.Show();
+            this.Hide();
+        }
+
+        private void listActividades_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //Doble click a los elementos para revisar sus contenidos
+            ConsultarActividad consultarActividad = new ConsultarActividad();
+            consultarActividad.idGrupo = this.idGrupo;
+            consultarActividad.noActividad = Convert.ToInt32(listActividades.SelectedValue);
+            consultarActividad.Show();
             this.Hide();
         }
     }

@@ -19,7 +19,7 @@ namespace Corvus_Proyecto.Controllers
               {
                  using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
                   {
-                     using (SQLiteCommand command = new SQLiteCommand(@"select  nombreActividad from Actividades where idGrupo=@idGrupo", connection))
+                     using (SQLiteCommand command = new SQLiteCommand(@"select  noActividad,nombreActividad from Actividades where idGrupo=@idGrupo", connection))
                         {
                           connection.Open();
                           command.Parameters.AddWithValue("@idGrupo", idGrupo);
@@ -71,6 +71,41 @@ namespace Corvus_Proyecto.Controllers
             {
                 throw new Exception(ex.Message, ex);
             }
+        }
+
+        //Otro get para desplegar la actividad seleccionada del ListBox
+        public  ActividadModel GetDetallesActividad(ActividadModel actividadModel)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using (SQLiteCommand command = new SQLiteCommand("select nombreActividad, descActividad from Actividades where noActividad=@noActividad", connection))
+                    {
+                        connection.Open();
+
+                        command.Parameters.AddWithValue("@noActividad", actividadModel.IdActividad);
+                        command.ExecuteNonQuery();
+
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            ActividadModel modelAux = new ActividadModel();
+                            modelAux.NombreActividad =Convert.ToString( dt.Rows[0]["nombreActividad"]);
+                            modelAux.DescActividad = dt.Rows[0]["descActividad"].ToString();
+
+                            return modelAux;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+           
         }
 
         //Agregar nueva actividad a un grupo

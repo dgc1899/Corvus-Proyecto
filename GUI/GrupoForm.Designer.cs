@@ -48,6 +48,7 @@ namespace Corvus_Proyecto.GUI
             this.listActividades.Name = "listActividades";
             this.listActividades.Size = new System.Drawing.Size(141, 334);
             this.listActividades.TabIndex = 0;
+            this.listActividades.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listActividades_MouseDoubleClick);
             // 
             // cmdActividades
             // 
