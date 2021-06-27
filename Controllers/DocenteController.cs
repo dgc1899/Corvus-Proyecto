@@ -60,8 +60,6 @@ namespace Corvus_Proyecto.Controllers
                     using (SQLiteCommand command=new SQLiteCommand(@"INSERT INTO Docentes ('nombreDocente','passDocente') VALUES (@nombreDocente,@passDocente)",
                         connection))
                     {
-                        // command.Parameters.Add(new SQLiteParameter("@nombreDocente", dto.user));
-                        //command.Parameters.Add(new SQLiteParameter("@passDocente", dto.pass));
                         connection.Open();
                         command.Parameters.AddWithValue("@nombreDocente", dto.user);
                         command.Parameters.AddWithValue("@passDocente", dto.pass);
@@ -84,6 +82,38 @@ namespace Corvus_Proyecto.Controllers
                 throw new Exception(ex.Message, ex);
             }
 
+            
+        }
+
+        //Metodo para obtener el ID del docente que se acaba de registrar, esto es provisional
+        public int GetIdDocente()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using (SQLiteCommand command = new SQLiteCommand("select seq from sqlite_sequence where name='Docentes' ", connection))
+                    {
+                        connection.Open();
+
+                        int idDocente = Convert.ToInt32(command.ExecuteScalar());
+                        if (idDocente != 0)
+                        {
+                            return idDocente;
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message,ex);
+            }
+           
             
         }
 

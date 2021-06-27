@@ -9,6 +9,7 @@ namespace Corvus_Proyecto.Model
 {
     public class ExamenModel:ActividadModel
     {
-        public List<PreguntasModel> preguntasModels = new List<PreguntasModel>();
+        public int UnidadExamen { get; set; }
+        public string FechaLimiteExamen { get; set; }
     }
 }

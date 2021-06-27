@@ -28,19 +28,7 @@ namespace Corvus_Proyecto.Controllers
                         command.ExecuteNonQuery();
                         noIconos =Convert.ToInt32(command.ExecuteScalar());
                         return noIconos;
-                        /*using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
-                        {
-                            DataTable dt = new DataTable();
-                            adapter.Fill(dt);
-                            if (dt.Rows.Count > 0)
-                            {
-                                noIconos = dt.Rows.Count;
-                                return noIconos;
-                            }
-                            command.ExecuteNonQuery();
-                            connection.Close();
-
-                        }*/
+            
                     }
                 }
             }
@@ -122,6 +110,40 @@ namespace Corvus_Proyecto.Controllers
             }
         }
 
+        //Get información de un grupo para poblar textboxes
+        public GrupoModel GetGrupos(int idGrupo)
+        {
+            try
+            {
+                using(SQLiteConnection connection=new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using(SQLiteCommand command=new SQLiteCommand("select nombreGrupo,descGrupo,periodoGrupo from Grupos where idGrupo=@idGrupo", connection))
+                    {
+                        command.Parameters.AddWithValue("@idGrupo", idGrupo);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        using(SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            GrupoModel grupoModel = new GrupoModel();
+                            grupoModel.Nombre = dt.Rows[0]["nombreGrupo"].ToString();
+                            grupoModel.Descripcion = dt.Rows[0]["descGrupo"].ToString();
+                            grupoModel.Periodo = dt.Rows[0]["periodoGrupo"].ToString();
+
+                            return grupoModel;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
         //Agregar nuevo grupo
         public bool Agregar(GrupoModel grupoModel)
         {
@@ -156,6 +178,100 @@ namespace Corvus_Proyecto.Controllers
             {
                 throw new Exception(ex.Message, ex);
             }
+        }
+
+        //Modificar grupo
+        public bool Modificar(GrupoModel grupoModel)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using (SQLiteCommand command = new SQLiteCommand("UPDATE Grupos Set nombreGrupo=@nombreGrupo,descGrupo=@descGrupo,periodoGrupo=@periodoGrupo where idGrupo=@idGrupo", connection))
+                    {
+                        connection.Open();
+                        command.Parameters.AddWithValue("@idGrupo", grupoModel.IdGrupo);
+                        command.Parameters.AddWithValue("@nombreGrupo", grupoModel.Nombre);
+                        command.Parameters.AddWithValue("@descGrupo", grupoModel.Descripcion);
+                        command.Parameters.AddWithValue("@periodoGrupo", grupoModel.Periodo);
+
+                        var output = command.ExecuteNonQuery();
+                        if (output == 1)
+                        {
+                            return true;
+                        }
+                        else
+                            return false;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+           
+           
+        }
+
+        //Eliminar grupo
+        public void Eliminar(GrupoModel grupoModel)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    SQLiteTransaction transaction;
+
+                    connection.Open();
+                    transaction = connection.BeginTransaction();
+                    try
+                    {
+                        //Poner todos los commands dentro de este bloque try
+                        using (SQLiteCommand command = new SQLiteCommand("delete from Grupo_has_Alumnos where idGrupo=@idGrupo",connection,transaction))
+                        {
+                            command.Parameters.AddWithValue("@idGrupo", grupoModel.IdGrupo);
+                           var output= command.ExecuteNonQuery();
+                            /*if (output == 1)
+                            {
+                                using (SQLiteCommand command1 = new SQLiteCommand("delete from Alumnos where noControl=@noControl", connection, transaction))
+                                {
+                                    command.Parameters.AddWithValue("@noControl",);
+                                    command.ExecuteNonQuery();
+                                }
+                            }*/
+                        }
+
+                        using (SQLiteCommand command = new SQLiteCommand("delete from Actividades where idGrupo=@idGrupo", connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("@idGrupo", grupoModel.IdGrupo);
+                            command.ExecuteNonQuery();
+                        }
+
+                        using (SQLiteCommand command = new SQLiteCommand("delete from Examenes where idGrupo=@idGrupo", connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("@idGrupo", grupoModel.IdGrupo);
+                            command.ExecuteNonQuery();
+                        }
+
+                        using (SQLiteCommand command = new SQLiteCommand("delete from Grupos where idGrupo=@idGrupo", connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("@idGrupo", grupoModel.IdGrupo);
+                            command.ExecuteNonQuery();
+                        }
+                        transaction.Commit();
+                    }
+                    catch(SQLiteException sqlerror)
+                    {
+                        transaction.Rollback();
+                        throw new SQLiteException(sqlerror.Message, sqlerror);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+           
         }
     }
 }

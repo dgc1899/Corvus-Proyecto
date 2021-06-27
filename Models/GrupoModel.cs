@@ -8,7 +8,7 @@ namespace Corvus_Proyecto.Model
 {
     public class GrupoModel
     {
-        //public int IdGrupo { get; set; }
+        public int IdGrupo { get; set; }
         public string Nombre { get; set; }
         public string Periodo { get; set; }
         public string Descripcion { get; set; }
