@@ -114,5 +114,32 @@ namespace Corvus_Proyecto.Controllers
                 throw new Exception(ex.Message, ex);
             }
         }
+
+        public bool Eliminar(ExamenModel examenModel)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(SqliteDataAccess.GetConnectionString()))
+                {
+                    using (SQLiteCommand command = new SQLiteCommand("delete from Examenes where idExamen=@idExamen", connection))
+                    {
+                        command.Parameters.AddWithValue("@idExamen", examenModel.IdActividad);
+                        connection.Open();
+                        var verify = command.ExecuteNonQuery();
+                        if (verify == 1)
+                        {
+                            return true;
+                        }
+                        else
+                            return false;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
     }
 }

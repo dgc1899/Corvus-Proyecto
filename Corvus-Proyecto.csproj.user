@@ -34,6 +34,9 @@
     <Compile Update="GUI\NuevaEvaluaciónForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\NuevoAlumnoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\OpcionesForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -72,5 +72,21 @@ namespace Corvus_Proyecto.GUI
         {
             LLenarListaActividades(idGrupo);
         }
+
+        private void cmdMiembros_Click(object sender, EventArgs e)
+        {
+            Miembros_de_Grupo miembros_De_Grupo = new Miembros_de_Grupo();
+            miembros_De_Grupo.idGrupo = this.idGrupo;
+            miembros_De_Grupo.Show();
+            this.Hide();
+        }
+
+        private void cmdOpciones_Click(object sender, EventArgs e)
+        {
+            OpcionesForm opcionesForm = new OpcionesForm();
+            opcionesForm.idGrupo = this.idGrupo;
+            opcionesForm.Show();
+            this.Hide();
+        }
     }
 }

@@ -80,6 +80,7 @@ namespace Corvus_Proyecto.GUI
             this.cmdMiembros.TabIndex = 3;
             this.cmdMiembros.Text = "Miembros del grupo";
             this.cmdMiembros.UseVisualStyleBackColor = true;
+            this.cmdMiembros.Click += new System.EventHandler(this.cmdMiembros_Click);
             // 
             // cmdOpciones
             // 
@@ -89,6 +90,7 @@ namespace Corvus_Proyecto.GUI
             this.cmdOpciones.TabIndex = 4;
             this.cmdOpciones.Text = "Opciones";
             this.cmdOpciones.UseVisualStyleBackColor = true;
+            this.cmdOpciones.Click += new System.EventHandler(this.cmdOpciones_Click);
             // 
             // cmdAtras
             // 

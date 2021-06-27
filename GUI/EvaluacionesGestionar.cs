@@ -1,4 +1,5 @@
 ﻿using Corvus_Proyecto.Controllers;
+using Corvus_Proyecto.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,11 @@ namespace Corvus_Proyecto.GUI
         }
 
         private void EvaluacionesGestionar_Load(object sender, EventArgs e)
+        {
+            PoblarDataGrid();
+        }
+
+        private void PoblarDataGrid()
         {
             //Poblar DataGrid de Examenes
             ExamenController examenController = new ExamenController();
@@ -45,19 +51,19 @@ namespace Corvus_Proyecto.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ActividadModel actividadModel;
-            ActividadController actividadController;
+            ExamenModel examenModel;
+            ExamenController examenController;
             //Eliminar el registro seleccionado
             try
             {
                 DialogResult dialogResult = MessageBox.Show("Esto va a eliminar el registro seleccionado", "¿Seguro que desea eliminar?", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    actividadModel = new ActividadModel();
-                    actividadController = new ActividadController();
+                    examenModel = new ExamenModel();
+                    examenController = new ExamenController();
 
-                    actividadModel.IdActividad = Convert.ToInt32(gridActividades.CurrentRow.Cells["noActividad"].Value);
-                    bool output = actividadController.Eliminar(actividadModel);
+                    examenModel.IdActividad = Convert.ToInt32(gridEvaluaciones.CurrentRow.Cells["idExamen"].Value);
+                    bool output = examenController.Eliminar(examenModel);
 
                     if (output == true)
                     {
@@ -75,7 +81,7 @@ namespace Corvus_Proyecto.GUI
             {
                 throw new Exception(ex.Message, ex);
             }
-        }
+        }   
     }
-    }
+    
 }
