@@ -62,5 +62,28 @@ namespace Corvus_Proyecto.GUI
                 throw new Exception(ex.Message, ex);
             }
         }
+
+        private void pictureBox_cerrar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void NuevaActividad_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox_minimizar_Click(object sender, EventArgs e)
+        {
+            string message = "¿Desea cerrar la aplicación?";
+            string caption = "Cerrar programa - Corvus";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult resultado;
+            resultado = MessageBox.Show(message, caption, buttons);
+            if (resultado == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
