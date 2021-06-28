@@ -401,7 +401,7 @@ namespace Corvus_Proyecto.GUI.Pizarron
             this.Controls.Add(this.btn_Red);
             this.Controls.Add(this.pbxlienzo);
             this.Name = "PizzarronForm";
-            this.Text = "Pizzarron";
+            this.Text = "Pizzarron - Corvus";
             ((System.ComponentModel.ISupportInitialize)(this.pbxlienzo)).EndInit();
             this.bmenus.ResumeLayout(false);
             this.bmenus.PerformLayout();
